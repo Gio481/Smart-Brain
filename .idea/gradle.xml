@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/SmartBrainAuthentication" />
             <option value="$PROJECT_DIR$/SmartBrainComponents" />
+            <option value="$PROJECT_DIR$/SmartBrainDatabase" />
             <option value="$PROJECT_DIR$/SmartBrainFindSimilarPieces" />
             <option value="$PROJECT_DIR$/SmartBrainGuessCharacters" />
             <option value="$PROJECT_DIR$/SmartBrainHome" />
