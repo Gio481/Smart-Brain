@@ -14,3 +14,12 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Smart Brain"
 include ':app'
+include ':SmartBrainComponents'
+include ':SmartBrainAuthentication'
+include ':SmartBrainNavigation'
+include ':SmartBrainSplash'
+include ':SmartBrainHome'
+include ':SmartBrainGuessCharacters'
+include ':SmartBrainFindSimilarPieces'
+include ':SmartBrainTheMaze'
+include ':SmartBrainDatabase'
