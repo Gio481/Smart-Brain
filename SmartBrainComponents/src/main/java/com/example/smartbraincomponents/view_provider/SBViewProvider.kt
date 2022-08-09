@@ -1,0 +1,3 @@
+package com.example.smartbraincomponents.view_provider
+
+interface SBViewProvider
