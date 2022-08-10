@@ -26,7 +26,6 @@ class SBMainActivity : AppCompatActivity() {
         object : SBAppNavigator<SBFeatureScreen>(
             this,
             R.id.mainFragmentContainerView,
-            get(CICERONE_FEATURE),
             supportFragmentManager
         ) {
             override fun activityBack() {

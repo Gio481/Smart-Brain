@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import com.example.smartbraincomponents.databinding.SbBaseFragmentsLayoutBinding
+import com.example.smartbraincomponents.util.SBFlowNavigator
 import com.example.smartbraincomponents.util.injectNavigatorHolder
 import com.example.smartbrainnavigation.cicerone.constants.CICERONE_FLOW
-import com.example.smartbrainnavigation.cicerone.navigator.SBFlowNavigator
 import com.example.smartbrainnavigation.cicerone.navigator.SBNavigator
 import org.koin.android.ext.android.get
 
@@ -17,7 +17,7 @@ abstract class SBBaseFeatureFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>(
 
     private lateinit var binding: SbBaseFragmentsLayoutBinding
     private val navigatorHolder by injectNavigatorHolder()
-    private val navigator: SBNavigator by lazy { SBFlowNavigator(this, vm?.router, get(CICERONE_FLOW)) }
+    private val navigator: SBNavigator by lazy { SBFlowNavigator(this, vm?.router) }
 
     @StringRes
     abstract fun getTitleResId(): Int?
