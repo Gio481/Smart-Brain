@@ -4,7 +4,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
-import com.example.smartbrainnavigation.cicerone.SBNavigationStrategy
 import com.example.smartbrainnavigation.cicerone.base.SBBaseScreen
 import com.example.smartbrainnavigation.cicerone.command.*
 import com.example.smartbrainnavigation.cicerone.screen.SBScreen
@@ -12,7 +11,6 @@ import com.example.smartbrainnavigation.cicerone.screen.SBScreen
 abstract class SBAppNavigator<T : SBBaseScreen>(
     protected val activity: FragmentActivity,
     protected val containerId: Int,
-    private val strategy: SBNavigationStrategy<T>,
     protected val fragmentManager: FragmentManager = activity.supportFragmentManager,
 ) : SBNavigator {
 
@@ -125,7 +123,6 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
     ){
         val fragment = screen.getFragment()
         val transaction = fragmentManager.beginTransaction()
-        strategy.setUpAnimation(screen as T, transaction, fragment, localStackCopy.size)
         transaction.setReorderingAllowed(true)
         setupFragmentTransaction(
             screen,
