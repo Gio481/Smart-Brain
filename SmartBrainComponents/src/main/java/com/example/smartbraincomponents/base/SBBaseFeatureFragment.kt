@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.StringRes
-import androidx.fragment.app.Fragment
+import androidx.core.view.isVisible
+import com.example.smartbraincomponents.R
 import com.example.smartbraincomponents.databinding.SbBaseFragmentsLayoutBinding
 import com.example.smartbraincomponents.util.SBFlowNavigator
 import com.example.smartbraincomponents.util.injectNavigatorHolder
-import com.example.smartbrainnavigation.cicerone.constants.CICERONE_FLOW
+import com.example.smartbrainnavigation.cicerone.base.SBBaseScreen
 import com.example.smartbrainnavigation.cicerone.navigator.SBNavigator
-import org.koin.android.ext.android.get
 
 abstract class SBBaseFeatureFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>() {
 
@@ -20,9 +20,7 @@ abstract class SBBaseFeatureFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>(
     private val navigator: SBNavigator by lazy { SBFlowNavigator(this, vm?.router) }
 
     @StringRes
-    abstract fun getTitleResId(): Int?
-
-    abstract fun getStartFragment():Fragment
+    protected open fun getTitleResId(): Int? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +35,7 @@ abstract class SBBaseFeatureFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getTitle()
+        binding.backButton.isVisible = true
     }
 
     override fun onResume() {
@@ -49,12 +48,14 @@ abstract class SBBaseFeatureFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>(
         super.onPause()
     }
 
-    private fun getTitle() = getTitleResId()?.let { binding.fragmentTitle.setText(it) }
-
-    private fun startFragment(fragment: Fragment){
-       val transaction = childFragmentManager.beginTransaction()
+    // dzaan droebit sanam gavasworeb
+    fun startFragment(fragment: SBBaseScreen) {
+        val s = childFragmentManager.beginTransaction()
+        s.replace(R.id.fragmentBaseContainer, fragment.getFragment(), fragment.screenKey)
+        s.commit()
     }
 
+    private fun getTitle() {
+        binding.fragmentTitle.text = getTitleResId()?.let { requireContext().getString(it) } ?: ""
+    }
 }
-
-abstract class SBBaseFlowFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>()

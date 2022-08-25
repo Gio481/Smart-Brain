@@ -1,5 +1,6 @@
 package com.example.smartbrainnavigation.cicerone.navigator
 
+import android.util.Log.d
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
@@ -8,7 +9,7 @@ import com.example.smartbrainnavigation.cicerone.base.SBBaseScreen
 import com.example.smartbrainnavigation.cicerone.command.*
 import com.example.smartbrainnavigation.cicerone.screen.SBScreen
 
-abstract class SBAppNavigator<T : SBBaseScreen>(
+abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
     protected val activity: FragmentActivity,
     protected val containerId: Int,
     protected val fragmentManager: FragmentManager = activity.supportFragmentManager,
@@ -56,6 +57,7 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
         )
     }
     protected  open fun replace(command: Replace){
+        d("nikoloz", "replace")
         commitNewFragmentScreen(
             command.screen as SBBaseScreen,
             command,
@@ -124,12 +126,12 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
         val fragment = screen.getFragment()
         val transaction = fragmentManager.beginTransaction()
         transaction.setReorderingAllowed(true)
-        setupFragmentTransaction(
-            screen,
-            transaction,
-            fragmentManager.findFragmentById(containerId),
-            fragment
-        )
+//        setupFragmentTransaction(
+//            screen,
+//            transaction,
+//            fragmentManager.findFragmentById(containerId),
+//            fragment
+//        )
         if (shouldReplace) {
             transaction.replace(containerId, fragment, screen.screenKey)
         } else {

@@ -7,4 +7,11 @@
             <enum name="invisible" value="1"/>
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="ViewPagerCircleIndicator">
+        <attr name="activeCircleBackground" format="reference"/>
+        <attr name="inactiveCircleBackground" format="reference"/>
+        <attr name="circleIndicatorMargin" format="dimension"/>
+        <attr name="circleIndicatorSize" format="dimension"/>
+    </declare-styleable>
 </resources>

@@ -1,5 +1,9 @@
 package com.example.smartbrain.di
 
+import com.example.smartbrainauthentication.navigation.SBAuthenticationNavigator
+import com.example.smartbrainauthentication.navigation.SBAuthenticationNavigatorImpl
+import com.example.smartbrainintro.navigation.SBIntroNavigator
+import com.example.smartbrainintro.navigation.SBIntroNavigatorImpl
 import com.example.smartbrainnavigation.cicerone.SBCicerone
 import com.example.smartbrainnavigation.cicerone.base.SBBaseRouter
 import com.example.smartbrainnavigation.cicerone.constants.CICERONE_FEATURE
@@ -15,4 +19,6 @@ val sbNavigatorModule = module {
     single(CICERONE_FEATURE) { get<SBCicerone<SBFeatureRouter>>(CICERONE_FEATURE).getNavigatorHolder() }
 
     single<SBSplashNavigator> { SBSplashNavigatorImpl(router = get()) }
+    single<SBIntroNavigator> { SBIntroNavigatorImpl(router = get()) }
+    single<SBAuthenticationNavigator> { SBAuthenticationNavigatorImpl(featureRouter = get()) }
 }
