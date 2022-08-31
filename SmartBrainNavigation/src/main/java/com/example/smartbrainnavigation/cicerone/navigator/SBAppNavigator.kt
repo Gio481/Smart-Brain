@@ -125,7 +125,7 @@ abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
     ){
         val fragment = screen.getFragment()
         val transaction = fragmentManager.beginTransaction()
-        transaction.setReorderingAllowed(true)
+//        transaction.setReorderingAllowed(false)
 //        setupFragmentTransaction(
 //            screen,
 //            transaction,

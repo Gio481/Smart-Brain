@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import org.koin.androidx.viewmodel.ext.android.getStateViewModel
+import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import kotlin.reflect.KClass
 
 abstract class SBBaseFragment<VM : SBBaseViewModel> : Fragment() {
@@ -26,6 +27,7 @@ abstract class SBBaseFragment<VM : SBBaseViewModel> : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (getViewModelClass() != null) {
+
             vm = getStateViewModel(clazz = getViewModelClass()!!)
         }
     }

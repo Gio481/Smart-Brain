@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/authIconImageView"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_arrow" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/authFieldName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="serif"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/authIconImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/authIconImageView"
+        app:layout_constraintTop_toTopOf="@id/authIconImageView"
+        tools:text="Email" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/authEditText"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:maxLines="1"
+        android:background="@android:color/transparent"
+        android:gravity="center|start"
+        android:textCursorDrawable="@drawable/sb_edit_text_cursos"
+        android:textColor="@android:color/transparent"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="@id/authFieldName"
+        app:layout_constraintStart_toStartOf="@id/authFieldName"
+        app:layout_constraintTop_toBottomOf="@id/authFieldName" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/customCirclePasswordsLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="start|center"
+        app:layout_constraintBottom_toBottomOf="@id/authEditText"
+        app:layout_constraintEnd_toStartOf="@id/toggleButtonImageView"
+        app:layout_constraintStart_toStartOf="@id/authEditText"
+        app:layout_constraintTop_toTopOf="@id/authEditText" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/toggleButtonImageView"
+        android:src="@drawable/ic_not_visible"
+        android:layout_width="30dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/authFieldName"
+        app:layout_constraintBottom_toBottomOf="@id/authEditText"
+        app:layout_constraintTop_toTopOf="@id/authEditText"
+        android:layout_height="25dp"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="#C6C5C5"
+        app:layout_constraintEnd_toEndOf="@id/authFieldName"
+        app:layout_constraintStart_toStartOf="@id/authIconImageView"
+        app:layout_constraintTop_toBottomOf="@id/authEditText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

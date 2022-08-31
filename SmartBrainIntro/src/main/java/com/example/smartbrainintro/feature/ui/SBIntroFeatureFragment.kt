@@ -32,8 +32,8 @@ class SBIntroFeatureFragment : SBBaseFragment<SBIntroFeatureViewModel>() {
     }
 
     override fun onBindViewModel(vm: SBIntroFeatureViewModel) {
-//        binding.onBoardingViewPager.adapter = mAdapter
-//        binding.giorgi.setViewPager(binding.onBoardingViewPager)
+        binding.onBoardingViewPager.adapter = mAdapter
+        binding.giorgi.setViewPager(binding.onBoardingViewPager)
         binding.signInButton.setOnClickListener {
             vm.navigateToSignIn()
         }
@@ -41,4 +41,6 @@ class SBIntroFeatureFragment : SBBaseFragment<SBIntroFeatureViewModel>() {
             vm.navigateToSignUp()
         }
     }
+
+
 }

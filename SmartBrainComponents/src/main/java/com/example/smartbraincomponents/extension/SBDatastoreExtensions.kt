@@ -1,4 +1,4 @@
-package com.example.smartbraincomponents.datastore
+package com.example.smartbraincomponents.extension
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences

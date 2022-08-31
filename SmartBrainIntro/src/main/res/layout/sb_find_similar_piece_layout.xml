@@ -23,14 +23,14 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="30dp"
-        android:text="ითამაშე ლაბირინთი და გამოსცადე შენი სკილები"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:text="გამოსცადე შენი თავი თუ როგორ შეგიძლია გამოიცნო ორი მსგავსი ფიგურა"
+        android:textSize="18sp"
         android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoImageView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

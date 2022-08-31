@@ -1,13 +1,16 @@
 package com.example.smartbrain.view_provider
 
-import android.view.ViewGroup
-import com.example.smartbraincomponents.view_provider.SBViewProvider
+import android.content.Context
+import com.example.smartbraincomponents.my_smart_brain.SBMySmartBrainBaseView
+import com.example.smartbraincomponents.view_provider.SBMySmartBrainViewProvider
+import com.example.smartbrainguesscharacters.my_smart_brain.SBGuessCharacterMySmartBrainContainer
+import com.example.smartbrainhome.presentation.custom_view.SBHomeCustomScrollView
 
-class SBMySmartBrainViewProviderImpl:SBMySmartBrainViewProvider {
+class SBMySmartBrainViewProviderImpl(private val context: Context) : SBMySmartBrainViewProvider {
 
-    override fun getViews(view: ViewGroup): List<SBViewProvider> {
-        val items = mutableListOf<SBViewProvider>()
-
+    override fun getViews(): List<SBMySmartBrainBaseView> {
+        val items = mutableListOf<SBMySmartBrainBaseView>()
+        items.add(SBGuessCharacterMySmartBrainContainer(context = context))
         return items.toList()
     }
 }

@@ -6,7 +6,6 @@ import com.example.smartbrainnavigation.cicerone.flow.SBFlowRouter
 import com.example.smartbrainnavigation.cicerone.flow.SBFlowScreen
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
-
 open class SBBaseViewModel : ViewModel(), KoinComponent {
 
     val router: SBFlowRouter by inject()

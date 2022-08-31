@@ -26,7 +26,7 @@
         android:layout_marginTop="30dp"
         android:text="ითამაშე ლაბირინთი და გამოსცადე შენი სკილები"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -21,6 +21,8 @@ class SBSignInFragment : SBBaseFlowFragment<SBSignInViewModel>() {
     }
 
     override fun onBindViewModel(vm: SBSignInViewModel) {
-        binding.giorgi.text = "ioe"
+        binding.forgotPasswordTextView.setOnClickListener {
+            vm.navigateToHome()
+        }
     }
 }
