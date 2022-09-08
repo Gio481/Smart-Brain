@@ -8,7 +8,7 @@
         </attr>
     </declare-styleable>
 
-    <declare-styleable name="ViewPagerCircleIndicator">
+    <declare-styleable name="SBViewPagerCircleIndicator">
         <attr name="activeCircleBackground" format="reference" />
         <attr name="inactiveCircleBackground" format="reference" />
         <attr name="circleIndicatorMargin" format="dimension" />
@@ -16,7 +16,7 @@
     </declare-styleable>
 
     <declare-styleable name="SBCustomAuthField">
-        <attr name="passwordIndicatorBackground" format="reference"/>
+        <attr name="passwordIndicatorBackground" format="reference" />
         <attr name="passwordIndicatorMargin" format="dimension" />
         <attr name="passwordIndicatorSize" format="dimension" />
         <attr name="icon" format="reference" />
@@ -29,4 +29,10 @@
         </attr>
 
     </declare-styleable>
+
+    <style name="ImageStyle_Circle">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
 </resources>

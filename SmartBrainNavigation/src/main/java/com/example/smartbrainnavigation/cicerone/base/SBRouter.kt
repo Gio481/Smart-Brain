@@ -2,7 +2,7 @@ package com.example.smartbrainnavigation.cicerone.base
 
 import com.example.smartbrainnavigation.cicerone.command.*
 
-open class SBRouter : SBBaseRouter() {
+abstract class SBRouter : SBBaseRouter() {
 
     protected fun executeAdd(screen: SBBaseScreen) {
         executeCommands(Add(screen))

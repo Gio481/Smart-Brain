@@ -1,13 +1,11 @@
 package com.example.smartbraincomponents.base
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import org.koin.androidx.viewmodel.ext.android.getStateViewModel
-import org.koin.androidx.viewmodel.ext.android.stateViewModel
 import kotlin.reflect.KClass
 
 abstract class SBBaseFragment<VM : SBBaseViewModel> : Fragment() {
@@ -25,9 +23,9 @@ abstract class SBBaseFragment<VM : SBBaseViewModel> : Fragment() {
     protected open fun initializeInjector(){}
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        initializeInjector()
         super.onCreate(savedInstanceState)
         if (getViewModelClass() != null) {
-
             vm = getStateViewModel(clazz = getViewModelClass()!!)
         }
     }
@@ -47,11 +45,6 @@ abstract class SBBaseFragment<VM : SBBaseViewModel> : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         vm?.let { onBindViewModel(it) }
-    }
-
-    override fun onAttach(context: Context) {
-        initializeInjector()
-        super.onAttach(context)
     }
 
     override fun onDestroy() {

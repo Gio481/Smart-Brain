@@ -6,10 +6,12 @@ import com.example.smartbrainauthentication.feature.signup.ui.SBSignUpFeatureFra
 import com.example.smartbrainnavigation.cicerone.feature.SBFeatureScreen
 
 sealed class SBAuthenticationScreens : SBFeatureScreen() {
-    object SignIn:SBAuthenticationScreens() {
+
+    object SignIn : SBAuthenticationScreens() {
         override fun getFragment(): Fragment = SBSignInFeatureFragment()
     }
-    object SignUp:SBAuthenticationScreens() {
+
+    object SignUp : SBAuthenticationScreens() {
         override fun getFragment(): Fragment = SBSignUpFeatureFragment()
     }
 }

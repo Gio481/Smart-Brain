@@ -7,8 +7,7 @@ import android.widget.ScrollView
 import com.example.smartbraincomponents.my_smart_brain.SBMySmartBrainBaseView
 import com.example.smartbraincomponents.view_provider.SBMySmartBrainViewProvider
 import com.example.smartbrainhome.databinding.SbHomeCustomScrollViewBinding
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
+import org.koin.java.KoinJavaComponent.get
 
 class SBHomeCustomScrollView @JvmOverloads constructor(
     context: Context,
@@ -16,12 +15,18 @@ class SBHomeCustomScrollView @JvmOverloads constructor(
     defStyle: Int = 0,
 ) : ScrollView(context, attrs, defStyle) {
 
-    private val koinComponentInstance = KoinComponentInstance()
-    private val binding = SbHomeCustomScrollViewBinding.inflate(LayoutInflater.from(context), this, true)
+    private val mySmartBrainViews: SBMySmartBrainViewProvider =
+        get(SBMySmartBrainViewProvider::class.java)
+
+    private val binding =
+        SbHomeCustomScrollViewBinding.inflate(LayoutInflater.from(context), this, true)
 
     init {
-        koinComponentInstance.mySmartBrain.getViews().forEach {
+        mySmartBrainViews.getViews().forEach {
             addMySmartBrainView(it)
+            val lp = it.layoutParams as MarginLayoutParams
+            lp.bottomMargin = MARGIN_BOTTOM
+            it.layoutParams = lp
         }
     }
 
@@ -29,7 +34,7 @@ class SBHomeCustomScrollView @JvmOverloads constructor(
         binding.mySmartBrainViewContainer.addView(view)
     }
 
-    class KoinComponentInstance : KoinComponent {
-        val mySmartBrain: SBMySmartBrainViewProvider by inject()
+    companion object {
+        private const val MARGIN_BOTTOM = 100
     }
 }

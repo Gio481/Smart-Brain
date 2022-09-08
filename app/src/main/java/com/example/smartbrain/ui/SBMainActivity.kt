@@ -23,7 +23,7 @@ class SBMainActivity : AppCompatActivity() {
     private val splashNavigator by inject<SBSplashNavigator>()
 
     private val navigator: SBNavigator by lazy {
-        object : SBAppNavigator<SBFeatureScreen>(
+        object : SBAppNavigator(
             this,
             R.id.mainFragmentContainerView,
             supportFragmentManager

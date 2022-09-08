@@ -44,8 +44,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
-    implementation "io.insert-koin:koin-android:3.2.0"
+//    implementation "io.insert-koin:koin-android:3.2.0"
 
+    implementation "io.insert-koin:koin-android-compat:3.2.0"
 
     implementation project(':SmartBrainAuthentication')
     implementation project(':SmartBrainComponents')

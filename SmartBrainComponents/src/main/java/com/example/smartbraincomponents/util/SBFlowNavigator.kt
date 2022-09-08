@@ -10,7 +10,7 @@ import com.example.smartbrainnavigation.cicerone.navigator.SBAppNavigator
 class SBFlowNavigator(
     fragment: SBBaseFeatureFragment<*>,
     private val router: SBFlowRouter?,
-) : SBAppNavigator<SBFlowScreen>(
+) : SBAppNavigator(
     fragment.requireActivity(),
     R.id.fragmentBaseContainer,
     fragment.childFragmentManager

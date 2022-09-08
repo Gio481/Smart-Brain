@@ -9,9 +9,9 @@ import org.koin.dsl.module
 
 class SBSignUpFeatureModule(override val featureQualifier: StringQualifier) : SBPerFeature() {
     override fun onFeatureModule() = module {
-        injectFlowNavigatorModule()
         viewModel {
-            SBSignUpFeatureViewModel()
+            SBSignUpFeatureViewModel(service = get(featureQualifier))
         }
+        injectFlowNavigatorModule(featureQualifier)
     }
 }

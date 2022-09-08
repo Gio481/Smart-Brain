@@ -33,7 +33,11 @@ class SBCustomAuthField @JvmOverloads constructor(
             field = value
         }
 
-
+    private var toggleButtonVisibility: Boolean? = null
+        set(value) {
+            value?.let { binding.toggleButtonImageView.isVisible = it }
+            field = value
+        }
 
     private var isPasswordHidden = true
     private var passwordIndicatorBackground: Int = -1
@@ -61,6 +65,7 @@ class SBCustomAuthField @JvmOverloads constructor(
                 1)
         editTextType =
             EditTextType.values()[typeArray.getInt(R.styleable.SBCustomAuthField_fieldType, 2)]
+        toggleButtonVisibility = typeArray.getBoolean(R.styleable.SBCustomAuthField_setToggleButton, false)
         typeArray.recycle()
         getAuthFieldType()
         setToggleButtonListener()
@@ -68,7 +73,6 @@ class SBCustomAuthField @JvmOverloads constructor(
 
     private fun setUpPasswords() {
         with(binding) {
-            toggleButtonImageView.isVisible = true
             authEditText.textChangedListener(
                 onTextChanged = { text, _, _, count ->
                     customCirclePasswordsLayout.isVisible = isPasswordHidden
@@ -131,7 +135,9 @@ class SBCustomAuthField @JvmOverloads constructor(
     private fun addPasswordView() {
         val passwordView = View(context)
         passwordView.setBackgroundResource(passwordIndicatorBackground)
-        binding.customCirclePasswordsLayout.addView(passwordView, passwordIndicatorSize, passwordIndicatorSize)
+        binding.customCirclePasswordsLayout.addView(passwordView,
+            passwordIndicatorSize,
+            passwordIndicatorSize)
         val lp = passwordView.layoutParams as LinearLayout.LayoutParams
         lp.marginStart = passwordIndicatorMargin
         passwordView.layoutParams = lp

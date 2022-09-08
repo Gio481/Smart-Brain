@@ -7,8 +7,8 @@ import androidx.annotation.StringRes
 import com.example.smartbraincomponents.databinding.MySmartBrainContainerBinding
 
 abstract class SBMySmartBrainViewContainer(
-    context: Context
-) : SBMySmartBrainBaseView(context)  {
+    context: Context,
+) : SBMySmartBrainBaseView(context) {
 
     private val binding by lazy {
         MySmartBrainContainerBinding.inflate(LayoutInflater.from(context), this, true)
@@ -17,9 +17,8 @@ abstract class SBMySmartBrainViewContainer(
     @StringRes
     protected abstract fun mySmartBrainTitle(): Int
 
-    protected abstract val view: SBMySmartBrainBaseChildView
+    abstract val view: SBMySmartBrainBaseChildView
 
-//    abstract val s:SBMySmartBrainViewContainer
 
     init {
         binding.mySmartBrainHeaderView.titleText = context.getString(this.mySmartBrainTitle())
@@ -27,8 +26,9 @@ abstract class SBMySmartBrainViewContainer(
 
     fun successState() {
 //        view.data = data
-        initHeaderViewForChild()
+//        initHeaderViewForChild()
         drawView(view)
+//        d("giorgi", "$view")
     }
 
     private fun drawView(view: ViewGroup) {

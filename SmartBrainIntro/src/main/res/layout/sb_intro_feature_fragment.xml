@@ -10,11 +10,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@id/giorgi"
+        app:layout_constraintBottom_toTopOf="@id/viewPagerCutomCircleIndicator"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.smartbraincomponents.components.indicator.ViewPagerCircleIndicator
-        android:id="@+id/giorgi"
+    <com.example.smartbraincomponents.components.indicator.SBViewPagerCircleIndicator
+        android:id="@+id/viewPagerCutomCircleIndicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:activeCircleBackground="@drawable/active_circle_indicator"
