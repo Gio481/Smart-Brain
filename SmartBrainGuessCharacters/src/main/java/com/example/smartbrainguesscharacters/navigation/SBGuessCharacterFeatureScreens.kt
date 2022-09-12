@@ -1,6 +1,7 @@
 package com.example.smartbrainguesscharacters.navigation
 
 import androidx.fragment.app.Fragment
+import com.example.smartbrainguesscharacters.feature.details.ui.SBGuessCharactersDetailsFeatureFragment
 import com.example.smartbrainguesscharacters.feature.guess_character.ui.SBGuessCharacterFeatureFragment
 import com.example.smartbrainguesscharacters.feature.guess_character_quote.ui.SBGuessCharacterQuoteFeatureFragment
 import com.example.smartbrainguesscharacters.feature.guess_movie.ui.SBGuessMovieFeatureFragment
@@ -16,8 +17,11 @@ sealed class SBGuessCharacterFeatureScreens : SBFeatureScreen() {
         override fun getFragment(): Fragment = SBGuessCharacterFeatureFragment()
     }
 
-
     object GuessCharacterQuote : SBGuessCharacterFeatureScreens() {
         override fun getFragment(): Fragment = SBGuessCharacterQuoteFeatureFragment()
+    }
+
+    object Details : SBGuessCharacterFeatureScreens() {
+        override fun getFragment(): Fragment = SBGuessCharactersDetailsFeatureFragment()
     }
 }

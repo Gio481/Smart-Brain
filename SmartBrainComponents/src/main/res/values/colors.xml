@@ -2,4 +2,8 @@
 <resources>
     <color name="grey">#636262</color>
     <color name="transparent">@android:color/transparent</color>
+    <color name="white">#FFFFFF</color>
+    <color name="green">#1FB826</color>
+    <color name="red">#D82A2A</color>
+    <color name="blue">#4527A0</color>
 </resources>

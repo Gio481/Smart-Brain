@@ -4,4 +4,5 @@ interface SBGuessCharacterNavigator {
     fun navigateToGuessCharacter()
     fun navigateToGuessMovies()
     fun navigateToGuessCharacterQuote()
+    fun navigateToDetails()
 }

@@ -1,8 +1,5 @@
 package com.example.smartbrainauthentication.presentation.signin.login.ui
 
-import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import com.example.smartbrainauthentication.R
 import com.example.smartbrainauthentication.databinding.SbAuthenticationSigninFragmentBinding
 import com.example.smartbrainauthentication.feature.signin.di.SBSignInFeatureComponentImpl
@@ -19,13 +16,10 @@ class SBSignInFragment : SBBaseFlowFragment<SBSignInViewModel>() {
 
     override fun defaultActionViewText(): Int = R.string.sign_in
 
-    override fun showBackButton(): Boolean {
-        return false
-    }
+    override fun showBackButton(): Boolean = false
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        setUpActions()
+    override fun defaultAction() {
+        vm?.navigateToHome()
     }
 
     private val binding by viewBinding(SbAuthenticationSigninFragmentBinding::bind)
@@ -35,16 +29,6 @@ class SBSignInFragment : SBBaseFlowFragment<SBSignInViewModel>() {
     }
 
     override fun onBindViewModel(vm: SBSignInViewModel) {
-        setUpActions()
-        defaultActionListener = {
-
-        }
-        binding.forgotPasswordTextView.setOnClickListener {
-            vm.navigateToHome()
-        }
     }
 
-    override fun isChildFragmentFlowPart(): Boolean {
-        return true
-    }
 }

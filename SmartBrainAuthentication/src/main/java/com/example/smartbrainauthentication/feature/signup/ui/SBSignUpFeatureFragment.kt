@@ -22,6 +22,4 @@ class SBSignUpFeatureFragment : SBBaseFeatureFragment<SBSignUpFeatureViewModel>(
     override fun onDestroyComponents() {
         SBSignUpFeatureComponentImpl().featureDestroy()
     }
-
-    override fun isChildFragmentFlowPart(): Boolean = false
 }

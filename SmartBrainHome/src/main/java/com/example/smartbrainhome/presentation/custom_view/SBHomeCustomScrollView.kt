@@ -15,8 +15,7 @@ class SBHomeCustomScrollView @JvmOverloads constructor(
     defStyle: Int = 0,
 ) : ScrollView(context, attrs, defStyle) {
 
-    private val mySmartBrainViews: SBMySmartBrainViewProvider =
-        get(SBMySmartBrainViewProvider::class.java)
+    private val mySmartBrainViews: SBMySmartBrainViewProvider = get(SBMySmartBrainViewProvider::class.java)
 
     private val binding =
         SbHomeCustomScrollViewBinding.inflate(LayoutInflater.from(context), this, true)

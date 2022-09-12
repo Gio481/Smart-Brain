@@ -10,8 +10,6 @@ import kotlin.reflect.KClass
 
 class SBSignInFeatureFragment : SBBaseFeatureFragment<SBSignInFeatureViewModel>() {
 
-    override fun isChildFragmentFlowPart(): Boolean = false
-
     override fun getTitleResId(): Int = R.string.sign_in
 
     override fun getViewModelClass(): KClass<SBSignInFeatureViewModel> =

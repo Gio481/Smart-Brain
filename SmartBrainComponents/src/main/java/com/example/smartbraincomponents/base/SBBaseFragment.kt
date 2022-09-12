@@ -16,11 +16,13 @@ abstract class SBBaseFragment<VM : SBBaseViewModel> : Fragment() {
 
     protected open fun getViewModelClass(): KClass<VM>? = null
 
-    protected open fun onBindViewModel(vm: VM){}
+    protected open fun onBindViewModel(vm: VM) {}
 
-    protected open fun onDestroyComponents(){}
+    protected open fun onDestroyComponents() {}
 
-    protected open fun initializeInjector(){}
+    open fun onBackPressed(): Boolean = false
+
+    protected open fun initializeInjector() {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         initializeInjector()

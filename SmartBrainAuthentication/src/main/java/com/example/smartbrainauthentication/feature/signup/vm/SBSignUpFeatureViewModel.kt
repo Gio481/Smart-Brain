@@ -4,9 +4,9 @@ import com.example.smartbrainauthentication.feature.signup.screen.SBSignUpFlowSc
 import com.example.smartbraincomponents.base.SBBaseViewModel
 import com.example.smartbrainnavigation.cicerone.service.SBFlowRouterService
 
-class SBSignUpFeatureViewModel(service:SBFlowRouterService):SBBaseViewModel(service) {
+class SBSignUpFeatureViewModel(service: SBFlowRouterService) : SBBaseViewModel(service) {
 
-    fun setStartFragment(){
+    fun setStartFragment() {
         changeScreen(screen = SBSignUpFlowScreens.PersonalInformation)
     }
 }

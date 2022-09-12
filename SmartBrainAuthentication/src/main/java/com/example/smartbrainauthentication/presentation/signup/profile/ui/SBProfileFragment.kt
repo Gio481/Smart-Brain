@@ -17,7 +17,16 @@ class SBProfileFragment : SBBaseFlowFragment<SBProfileViewModel>() {
 
     override val screenLayout: Int = R.layout.sb_authentication_profile_fragment
 
+    override fun showBackButton(): Boolean = true
+
+
     private val binding by viewBinding(SbAuthenticationProfileFragmentBinding::bind)
+
+    override fun defaultActionViewText(): Int = R.string.sign_up
+
+    override fun defaultAction() {
+        vm?.signUp()
+    }
 
     override fun initializeInjector() {
         SBSignUpFeatureComponentImpl().profileModule().inject(this)
@@ -33,14 +42,10 @@ class SBProfileFragment : SBBaseFlowFragment<SBProfileViewModel>() {
             SBLocalProfileData(R.drawable.local_image_4)
         )
 
-        binding.localImageRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.localImageRecyclerView.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.localImageRecyclerView.adapter = adapter
 
         adapter.setData(list)
     }
-
-    override fun isChildFragmentFlowPart(): Boolean {
-        return true
-    }
-
 }

@@ -2,6 +2,7 @@ package com.example.smartbraincomponents.components.indicator
 
 import android.content.Context
 import android.util.AttributeSet
+import android.util.Log.d
 import android.view.View
 import android.widget.LinearLayout
 import androidx.viewpager2.widget.ViewPager2
@@ -63,6 +64,8 @@ class SBViewPagerCircleIndicator @JvmOverloads constructor(
             return
         }
         val currentItem: Int = viewPager.currentItem
+
+        d("giorgi","${viewPager.currentItem}")
 
         for (i in 0 until count) {
             if (currentItem == i) {

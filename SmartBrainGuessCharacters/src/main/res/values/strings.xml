@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="guess_character">Guess Character</string>
+    <string name="guess_movies">გამოიცანი კინოები</string>
+    <string name="details">დეტალები</string>
+    <string name="start_game">თამაშის დაწყება</string>
 </resources>

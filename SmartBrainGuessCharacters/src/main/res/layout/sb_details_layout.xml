@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/levelProgressView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/sb_guess_character_my_smart_brain_view_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:gravity="center"
+        android:text="ტური 4"
+        android:textColor="@color/grey"
+        app:layout_constraintBottom_toBottomOf="@id/levelProgressView"
+        app:layout_constraintEnd_toEndOf="@id/levelProgressView"
+        app:layout_constraintStart_toStartOf="@id/levelProgressView"
+        app:layout_constraintTop_toTopOf="@id/levelProgressView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/tryAgainButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        android:src="@drawable/sb_guess_characters_ic_try_again"
+        app:layout_constraintEnd_toStartOf="@id/continueGameButton"
+        app:layout_constraintStart_toStartOf="@id/levelProgressView"
+        app:layout_constraintTop_toBottomOf="@id/levelProgressView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="თავიდან დაწყება"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/tryAgainButton"
+        app:layout_constraintStart_toStartOf="@id/tryAgainButton"
+        app:layout_constraintTop_toBottomOf="@id/tryAgainButton" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/continueGameButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/sb_guess_characters_ic_play"
+        app:layout_constraintEnd_toEndOf="@id/levelProgressView"
+        app:layout_constraintStart_toEndOf="@id/tryAgainButton"
+        app:layout_constraintTop_toBottomOf="@id/levelProgressView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="გაგრძელება"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/continueGameButton"
+        app:layout_constraintStart_toStartOf="@id/continueGameButton"
+        app:layout_constraintTop_toBottomOf="@id/continueGameButton" />
+
+    <View
+        android:id="@+id/dividerView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/myProgressBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="50dp"
+        android:background="@color/white"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dividerView" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/myProgressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:text="ჩემი პროგრესი"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/myProgressPercentTextView"
+        app:layout_constraintEnd_toStartOf="@id/myProgressPercentTextView"
+        app:layout_constraintStart_toStartOf="@id/myProgressBackground"
+        app:layout_constraintTop_toTopOf="@id/myProgressPercentTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/myProgressPercentTextView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="12sp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/sb_guess_character_my_smart_brain_view_background"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:text="5%"
+        app:layout_constraintEnd_toEndOf="@id/myProgressBackground"
+        app:layout_constraintStart_toEndOf="@id/myProgressTextView"
+        app:layout_constraintTop_toTopOf="@id/myProgressBackground" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myProgressRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:elevation="5dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/myProgressBackground"
+        app:layout_constraintEnd_toEndOf="@id/myProgressPercentTextView"
+        app:layout_constraintStart_toStartOf="@id/myProgressTextView"
+        app:layout_constraintTop_toBottomOf="@id/myProgressTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/showMoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:layout_marginTop="10dp"
+        android:text="სრულად ნახვა"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/myProgressBackground"
+        app:layout_constraintEnd_toStartOf="@id/showMoreImageView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/myProgressBackground"
+        app:layout_constraintTop_toBottomOf="@id/myProgressRecyclerView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/showMoreImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:src="@drawable/sb_guess_characters_show_more"
+        app:layout_constraintTop_toTopOf="@id/showMoreTextView"
+        app:layout_constraintEnd_toEndOf="@id/myProgressBackground"
+        app:layout_constraintStart_toEndOf="@id/showMoreTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

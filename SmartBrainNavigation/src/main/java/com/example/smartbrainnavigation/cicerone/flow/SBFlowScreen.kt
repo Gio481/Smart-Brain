@@ -4,10 +4,10 @@ import com.example.smartbrainnavigation.cicerone.SBAnimation
 import com.example.smartbrainnavigation.cicerone.base.SBBaseScreen
 
 abstract class SBFlowScreen : SBBaseScreen {
-    var animation: SBAnimation = SBAnimation.leftToRight()
+    var animation: SBFlowAnimations = SBFlowAnimations()
         private set
 
-    fun setAnimation(type: SBAnimation) {
+    fun setAnimation(type: SBFlowAnimations) {
         this.animation = type
     }
 }

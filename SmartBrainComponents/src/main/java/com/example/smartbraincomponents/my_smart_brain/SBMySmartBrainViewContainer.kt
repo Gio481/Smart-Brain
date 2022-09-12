@@ -28,7 +28,6 @@ abstract class SBMySmartBrainViewContainer(
 //        view.data = data
 //        initHeaderViewForChild()
         drawView(view)
-//        d("giorgi", "$view")
     }
 
     private fun drawView(view: ViewGroup) {

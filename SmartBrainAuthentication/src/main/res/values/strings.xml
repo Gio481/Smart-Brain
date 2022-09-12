@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="spl">giorg</string>
-    <string name="sign_in">Sign In</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="log_in">შესვლა</string>
-    <string name="user_registered">რეგისტრაცია</string>
+    <string name="sign_in">შესვლა</string>
+    <string name="sign_up">რეგისტრაცია</string>
 </resources>

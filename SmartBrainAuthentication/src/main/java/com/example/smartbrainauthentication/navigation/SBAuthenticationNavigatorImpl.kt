@@ -9,12 +9,12 @@ import com.example.smartbrainnavigation.cicerone.feature.SBFeatureRouter
 class SBAuthenticationNavigatorImpl(private val featureRouter: SBFeatureRouter) : SBAuthenticationNavigator {
     override fun navigateToSignIn() {
         SBSignInFeatureComponentImpl().featureInject()
-        featureRouter.navigateTo(screen = SBAuthenticationScreens.SignIn, navigationType = SBNavigationType.REPLACE)
+        featureRouter.navigateTo(screen = SBAuthenticationScreens.SignIn)
     }
 
     override fun navigateToSignUp() {
         SBSignUpFeatureComponentImpl().featureInject()
-        featureRouter.navigateTo(screen = SBAuthenticationScreens.SignUp, navigationType = SBNavigationType.REPLACE)
+        featureRouter.navigateTo(screen = SBAuthenticationScreens.SignUp)
     }
 
 }

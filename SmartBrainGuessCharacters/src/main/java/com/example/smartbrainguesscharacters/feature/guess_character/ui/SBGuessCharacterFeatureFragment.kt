@@ -5,5 +5,4 @@ import com.example.smartbrainguesscharacters.feature.guess_character.vm.SBGuessC
 
 class SBGuessCharacterFeatureFragment : SBBaseFeatureFragment<SBGuessCharacterFeatureVm>() {
 
-    override fun isChildFragmentFlowPart(): Boolean = false
 }
