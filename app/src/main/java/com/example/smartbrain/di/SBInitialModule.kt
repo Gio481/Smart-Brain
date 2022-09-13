@@ -1,8 +1,9 @@
 package com.example.smartbrain.di
 
-import com.example.smartbrainsplash.di.sbSplashModule
+import com.example.smartbraincomponents.datastore.datastoreModule
 
 val sbInitialModules = listOf(
     sbNavigatorModule,
-    sbSplashModule
+    viewProvidesModule,
+    datastoreModule,
 )

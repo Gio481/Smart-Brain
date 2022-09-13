@@ -3,14 +3,77 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/drawable/sb_authentication_button_background.xml" value="0.1535" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/drawable/sb_authentication_ic_down.xml" value="0.104" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/drawable/sb_authentication_ic_email.xml" value="0.1535" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/drawable/sb_authentication_view_background.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/drawable/sb_password_indicator_background.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/layout/sb_authentication_intro_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/layout/sb_authentication_local_profile_item.xml" value="0.1160081053698075" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/layout/sb_authentication_personal_info_fragment.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/layout/sb_authentication_profile_fragment.xml" value="0.176" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/layout/sb_authentication_signin_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/layout/sb_authentication_signup_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainAuthentication/src/main/res/layout/sb_authentication_signup_profile_fragment.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/active_circle.xml" value="0.141" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/circle_indicator.xml" value="0.1" />
         <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/ic_arrow.xml" value="0.1275" />
         <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/ic_cancel.xml" value="0.1275" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/ic_not_visible.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/ic_visible.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/inactive_circle.xml" value="0.1" />
         <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/my_smart_brain_container_background.xml" value="0.1275" />
-        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/my_smart_brain_container.xml" value="0.2" />
-        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/my_smart_brain_item_header_view.xml" value="0.2" />
-        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/sb_base_fragments_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/my_smart_brain_header_view_background.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/sb_base_fragment_layout_background.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/drawable/sb_edit_text_cursos.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/my_smart_brain_container.xml" value="0.125" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/my_smart_brain_item_header_view.xml" value="0.176" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/sb_base_activity_layout.xml" value="0.13768115942028986" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/sb_base_fragments_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/sb_custom_auth_field.xml" value="0.2" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/sb_custom_or_divider.xml" value="0.12" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/sb_default_action_view_layout.xml" value="0.152" />
         <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainComponents/src/main/res/layout/sb_my_smart_brain_item_header_view.xml" value="0.2" />
-        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainSplash/src/main/res/layout/sb_splash_fragment.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainFindSimilarPieces/src/main/res/layout/sb_find_similar_my_smart_brain_child_view.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/drawable/sb_blocking_item_background.xml" value="0.105" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/drawable/sb_guess_character_my_smart_brain_view_background.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/drawable/sb_guess_movies_list_background.xml" value="0.145" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/drawable/sb_guess_movies_list_closed_level_background.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/s.xml" value="0.23731884057971014" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_details_guess_movies_level_item.xml" value="0.72" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_details_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_details_view_my_progress_item.xml" value="0.4" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_guess_character_child_view.xml" value="0.10526315789473684" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_guess_character_my_smart_brain_view.xml" value="0.264" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_guess_character_quote_child_view.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_guess_movies_child_view.xml" value="0.176" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_guess_movies_genre_list_item.xml" value="0.2" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_guess_movies_intro_layout.xml" value="0.23766816143497757" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_guess_movies_list_child_fragment_layout.xml" value="0.23731884057971014" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_guess_movies_list_item.xml" value="0.2" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainGuessCharacters/src/main/res/layout/sb_guess_movies_list_layout.xml" value="0.176" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainHome/src/main/res/layout/d.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainHome/src/main/res/layout/g.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainHome/src/main/res/layout/hior.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainHome/src/main/res/layout/k.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainHome/src/main/res/layout/sb_home_custom_scroll_view.xml" value="0.24909420289855072" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainHome/src/main/res/layout/sb_home_feature_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/drawable/active_circle_indicator.xml" value="0.141" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/drawable/inactive_circle_indicator.xml" value="0.141" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/drawable/sign_in_button_background.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/drawable/sign_up_button_background.xml" value="0.1" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/layout/blank.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/layout/fragment_blank.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/layout/gio.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/layout/giorgi.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/layout/giorgi_fragmnet.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/layout/sb_find_similar_piece_layout.xml" value="0.152" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/layout/sb_guess_character_layout.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/layout/sb_intro_feature_fragment.xml" value="0.176" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainIntro/src/main/res/layout/sb_the_maze_layout.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainSplash/src/main/res/layout/giorgi.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/SmartBrainSplash/src/main/res/layout/sb_splash_fragment.xml" value="0.2" />
+        <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Giorgi.Beridze/AndroidStudioProjects/SmartBrain/app/src/main/res/layout/sb_activity_main.xml" value="0.22826086956521738" />
       </map>
     </option>

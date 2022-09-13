@@ -5,11 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.StringRes
 import com.example.smartbraincomponents.databinding.MySmartBrainContainerBinding
-import com.example.smartbraincomponents.view_provider.SBViewProvider
 
-abstract class SBMySmartBrainViewContainer<DATA>(
-    context: Context
-) : SBMySmartBrainBaseView(context), SBViewProvider {
+abstract class SBMySmartBrainViewContainer(
+    context: Context,
+) : SBMySmartBrainBaseView(context) {
 
     private val binding by lazy {
         MySmartBrainContainerBinding.inflate(LayoutInflater.from(context), this, true)
@@ -18,15 +17,16 @@ abstract class SBMySmartBrainViewContainer<DATA>(
     @StringRes
     protected abstract fun mySmartBrainTitle(): Int
 
-    protected abstract val view: SBMySmartBrainBaseChildView<DATA>
+    abstract val view: SBMySmartBrainBaseChildView
+
 
     init {
         binding.mySmartBrainHeaderView.titleText = context.getString(this.mySmartBrainTitle())
     }
 
-    fun successState(data: DATA) {
-        view.data = data
-        initHeaderViewForChild()
+    fun successState() {
+//        view.data = data
+//        initHeaderViewForChild()
         drawView(view)
     }
 

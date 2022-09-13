@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="SBMySmartBrainItemHeaderView">
-        <attr name="titleText" format="string|reference"/>
+        <attr name="titleText" format="string|reference" />
         <attr name="titleArrowShowType" format="enum">
-            <enum name="visible" value="0"/>
-            <enum name="invisible" value="1"/>
+            <enum name="visible" value="0" />
+            <enum name="invisible" value="1" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="SBViewPagerCircleIndicator">
+        <attr name="activeCircleBackground" format="reference" />
+        <attr name="inactiveCircleBackground" format="reference" />
+        <attr name="circleIndicatorMargin" format="dimension" />
+        <attr name="circleIndicatorSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SBCustomAuthField">
+        <attr name="passwordIndicatorBackground" format="reference" />
+        <attr name="passwordIndicatorMargin" format="dimension" />
+        <attr name="passwordIndicatorSize" format="dimension" />
+        <attr name="icon" format="reference" />
+        <attr name="hint" format="string" />
+        <attr name="setToggleButton" format="boolean" />
+        <attr name="fieldType" format="enum">
+            <enum name="password" value="0" />
+            <enum name="email" value="1" />
+            <enum name="text" value="2" />
+        </attr>
+
+    </declare-styleable>
+
+    <style name="ImageStyle_Circle">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
 </resources>

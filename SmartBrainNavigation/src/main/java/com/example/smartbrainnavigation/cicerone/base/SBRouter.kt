@@ -2,25 +2,31 @@ package com.example.smartbrainnavigation.cicerone.base
 
 import com.example.smartbrainnavigation.cicerone.command.*
 
-open class SBRouter:SBBaseRouter() {
+abstract class SBRouter : SBBaseRouter() {
 
-    protected fun executeAdd(screen: SBBaseScreen){
+    protected fun executeAdd(screen: SBBaseScreen) {
         executeCommands(Add(screen))
     }
-    protected fun executeReplace(screen: SBBaseScreen){
+
+    protected fun executeReplace(screen: SBBaseScreen) {
         executeCommands(Replace(screen))
     }
-    protected fun executePop(){
+
+    protected fun executePop() {
         executeCommands(Pop())
     }
-    protected fun executeClear(){
+
+    protected fun executeClear() {
         executeCommands(Clear())
     }
-    fun backTo(screen: SBBaseScreen){
+
+    fun backTo(screen: SBBaseScreen) {
         executeCommands(BackTo(screen))
     }
-    fun back(){
+
+    fun back() {
         executeCommands(Back())
     }
-    open fun finishFlow(){}
+
+    open fun finishFlow() {}
 }

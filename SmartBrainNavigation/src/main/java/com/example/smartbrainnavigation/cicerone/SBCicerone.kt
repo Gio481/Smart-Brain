@@ -8,6 +8,8 @@ class SBCicerone<T : SBBaseRouter>(private val router: T) {
     fun getNavigatorHolder(): SBNavigatorHolder = router.commandBuffer
 
     companion object {
+
+        @JvmStatic
         fun <T : SBBaseRouter> create(customRouter: T) = SBCicerone(customRouter)
     }
 }

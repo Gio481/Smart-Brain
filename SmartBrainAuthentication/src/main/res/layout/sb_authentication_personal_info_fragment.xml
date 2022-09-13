@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:elevation="5dp"
+        android:id="@+id/fieldsBackgroundView"
+        android:background="@drawable/sb_authentication_view_background"
+        android:layout_marginHorizontal="15dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottomDivider"
+        app:layout_constraintTop_toTopOf="@id/topDivider"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <com.example.smartbraincomponents.components.auth.SBCustomAuthField
+        android:id="@+id/emailCustomAuthFieldView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:layout_marginHorizontal="40dp"
+        app:hint="Email"
+        app:fieldType="email"
+        app:icon="@drawable/sb_authentication_ic_email"
+        app:layout_constraintBottom_toTopOf="@id/usernameCustomAuthFieldView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <com.example.smartbraincomponents.components.auth.SBCustomAuthField
+        android:id="@+id/usernameCustomAuthFieldView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:elevation="5dp"
+        app:hint="Username"
+        app:fieldType="text"
+        app:passwordIndicatorMargin="5dp"
+        app:passwordIndicatorSize="10dp"
+        app:passwordIndicatorBackground="@drawable/sb_password_indicator_background"
+        android:layout_marginVertical="20dp"
+        app:icon="@drawable/sb_authentication_ic_username"
+        app:layout_constraintBottom_toTopOf="@id/passwordCustomAuthFieldView"
+        app:layout_constraintTop_toBottomOf="@id/emailCustomAuthFieldView" />
+
+
+    <com.example.smartbraincomponents.components.auth.SBCustomAuthField
+        android:layout_width="match_parent"
+        app:hint="Password"
+        android:id="@+id/passwordCustomAuthFieldView"
+        app:icon="@drawable/sb_authentication_ic_password"
+        android:layout_marginVertical="20dp"
+        android:elevation="5dp"
+        android:layout_marginHorizontal="40dp"
+        app:fieldType="password"
+        app:passwordIndicatorMargin="5dp"
+        app:passwordIndicatorSize="10dp"
+        app:passwordIndicatorBackground="@drawable/sb_password_indicator_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usernameCustomAuthFieldView"
+        android:layout_height="wrap_content"/>
+
+
+    <View
+        android:id="@+id/topDivider"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@id/emailCustomAuthFieldView"
+        android:layout_height="1dp"/>
+
+    <View
+        android:id="@+id/bottomDivider"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintTop_toBottomOf="@id/passwordCustomAuthFieldView"
+        android:layout_height="1dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

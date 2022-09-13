@@ -2,6 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:layout_marginHorizontal="15dp"
+    android:background="@drawable/my_smart_brain_container_background"
     android:layout_height="wrap_content">
 
     <com.example.smartbraincomponents.my_smart_brain.SBMySmartBrainItemHeaderView
@@ -12,10 +14,14 @@
         app:titleArrowShowType="visible"
         app:titleText="giorgi" />
 
-    <FrameLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
         android:id="@+id/mySmartBrainContainerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/mySmartBrainHeaderView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/userImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/user_profile"
+        android:layout_marginTop="20dp"
+        android:layout_marginVertical="80dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/screenDividerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/chooseImageFromGalleryTextView"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="აირჩიე სურათი გალეერიიდან"
+        android:textColor="#0C7711"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/userImageView"
+        app:layout_constraintTop_toTopOf="@id/userImageView" />
+
+
+    <com.example.smartbraincomponents.components.or_divider.SBCustomOrDivider
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/chooseImageFromAppTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/userImageView"
+        app:layout_constraintTop_toTopOf="@id/chooseImageFromGalleryTextView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/chooseImageFromAppTextView"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:text="აირჩიე სურათი ქვემოდან"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/userImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/userImageView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/downIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:rotation="180"
+        android:src="@drawable/sb_authentication_ic_down"
+        app:layout_constraintBottom_toBottomOf="@id/chooseImageFromAppTextView"
+        app:layout_constraintEnd_toEndOf="@id/chooseImageFromAppTextView"
+        app:layout_constraintTop_toTopOf="@id/chooseImageFromAppTextView" />
+
+
+  <View
+      android:id="@+id/screenDividerView"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_width="match_parent"
+      android:layout_height="1dp"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:orientation="horizontal"
+        android:id="@+id/localImageRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/screenDividerView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

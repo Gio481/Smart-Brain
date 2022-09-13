@@ -1,20 +1,19 @@
 package com.example.smartbrainnavigation.cicerone.navigator
 
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.example.smartbrainnavigation.cicerone.base.SBBaseScreen
 import com.example.smartbrainnavigation.cicerone.command.*
 import com.example.smartbrainnavigation.cicerone.screen.SBScreen
 
-abstract class SBAppNavigator<T : SBBaseScreen>(
-    protected val activity: FragmentActivity,
-    protected val containerId: Int,
-    protected val fragmentManager: FragmentManager = activity.supportFragmentManager,
+abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
+    private val activity: FragmentActivity,
+    private val containerId: Int,
+    private val strategy: SBNavigatorStrategy<T>,
+    private val fragmentManager: FragmentManager = activity.supportFragmentManager,
 ) : SBNavigator {
 
-    protected val localStackCopy = mutableListOf<String>()
+    private val localStackCopy = mutableListOf<String>()
 
     override fun applyCommands(commands: Array<out SBCiceroneCommand>) {
         fragmentManager.executePendingTransactions()
@@ -47,7 +46,7 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
         }
     }
 
-    protected open fun add(command: Add){
+    protected open fun add(command: Add) {
         commitNewFragmentScreen(
             command.screen as SBBaseScreen,
             command,
@@ -55,7 +54,8 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
             shouldReplace = false
         )
     }
-    protected  open fun replace(command: Replace){
+
+    protected open fun replace(command: Replace) {
         commitNewFragmentScreen(
             command.screen as SBBaseScreen,
             command,
@@ -63,13 +63,15 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
             shouldReplace = true
         )
     }
-    private fun pop(){
+
+    private fun pop() {
         if (localStackCopy.isNotEmpty()) {
             fragmentManager.popBackStack()
             localStackCopy.removeAt(localStackCopy.lastIndex)
         }
     }
-    private fun clear(){
+
+    private fun clear() {
         if (localStackCopy.isNotEmpty()) {
             (0..fragmentManager.backStackEntryCount).forEach { _ ->
                 fragmentManager.popBackStack()
@@ -77,7 +79,8 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
             }
         }
     }
-    protected open fun back(){
+
+    protected open fun back() {
         if (localStackCopy.isNotEmpty()) {
             fragmentManager.popBackStack()
             localStackCopy.removeAt(localStackCopy.lastIndex)
@@ -86,7 +89,7 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
         }
     }
 
-    protected open fun backTo(command: BackTo){
+    protected open fun backTo(command: BackTo) {
         if (command.screen == null) {
             backToRoot()
         } else {
@@ -118,18 +121,12 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
     private fun commitNewFragmentScreen(
         screen: SBBaseScreen,
         command: SBCiceroneCommand,
-        addToBackStack:Boolean,
-        shouldReplace:Boolean
-    ){
+        addToBackStack: Boolean,
+        shouldReplace: Boolean,
+    ) {
         val fragment = screen.getFragment()
         val transaction = fragmentManager.beginTransaction()
-        transaction.setReorderingAllowed(true)
-        setupFragmentTransaction(
-            screen,
-            transaction,
-            fragmentManager.findFragmentById(containerId),
-            fragment
-        )
+        strategy.setUpTransaction(screen as T, fragment,transaction, localStackCopy.size)
         if (shouldReplace) {
             transaction.replace(containerId, fragment, screen.screenKey)
         } else {
@@ -142,17 +139,10 @@ abstract class SBAppNavigator<T : SBBaseScreen>(
         transaction.commit()
     }
 
-    protected open fun setupFragmentTransaction(
-        screen: SBBaseScreen,
-        fragmentTransaction: FragmentTransaction,
-        currentFragment: Fragment?,
-        nextFragment: Fragment
-    ) {
-    }
 
     protected open fun errorOnApplyCommand(
         command: SBCiceroneCommand,
-        error: RuntimeException
+        error: RuntimeException,
     ) {
         throw error
     }

@@ -5,26 +5,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
-import org.koin.android.ext.android.getKoin
-import org.koin.android.ext.android.getKoinScope
-import org.koin.androidx.viewmodel.ext.android.getSharedStateViewModel
-import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.androidx.viewmodel.ext.android.getStateViewModel
 import kotlin.reflect.KClass
 
 abstract class SBBaseFragment<VM : SBBaseViewModel> : Fragment() {
 
-    protected abstract val screenLayout: Int?
+    protected open val screenLayout: Int = 0
 
     protected var vm: VM? = null
 
-    protected abstract fun getViewModelClass(): KClass<VM>
+    protected open fun getViewModelClass(): KClass<VM>? = null
 
-    abstract fun onBindViewModel(vm: VM)
+    protected open fun onBindViewModel(vm: VM) {}
+
+    protected open fun onDestroyComponents() {}
+
+    open fun onBackPressed(): Boolean = false
+
+    protected open fun initializeInjector() {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        initializeInjector()
         super.onCreate(savedInstanceState)
-        vm = getSharedStateViewModel(clazz = getViewModelClass())
+        if (getViewModelClass() != null) {
+            vm = getStateViewModel(clazz = getViewModelClass()!!)
+        }
     }
 
     override fun onCreateView(
@@ -32,8 +37,8 @@ abstract class SBBaseFragment<VM : SBBaseViewModel> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return if (screenLayout != null) {
-            inflater.inflate(screenLayout!!, container, false)
+        return if (screenLayout != 0) {
+            inflater.inflate(screenLayout, container, false)
         } else {
             super.onCreateView(inflater, container, savedInstanceState)
         }
@@ -42,5 +47,10 @@ abstract class SBBaseFragment<VM : SBBaseViewModel> : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         vm?.let { onBindViewModel(it) }
+    }
+
+    override fun onDestroy() {
+        onDestroyComponents()
+        super.onDestroy()
     }
 }
