@@ -16,7 +16,6 @@ class SBGuessCharactersDetailsFeatureFragment : SBBaseFeatureFragment<SBGuessCha
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        vm?.setStartFragment()
     }
 
     override fun onDestroyComponents() {

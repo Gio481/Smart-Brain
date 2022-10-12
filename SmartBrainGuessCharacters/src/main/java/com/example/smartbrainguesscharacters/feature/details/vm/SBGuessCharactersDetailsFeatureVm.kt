@@ -6,7 +6,5 @@ import com.example.smartbrainnavigation.cicerone.service.SBFlowRouterService
 
 class SBGuessCharactersDetailsFeatureVm(service: SBFlowRouterService) : SBBaseViewModel(service) {
 
-    fun setStartFragment(){
-        changeScreen(screen = SBDetailsFlowScreens.Main)
-    }
+
 }

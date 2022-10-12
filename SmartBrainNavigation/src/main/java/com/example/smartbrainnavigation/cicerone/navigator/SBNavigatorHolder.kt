@@ -2,7 +2,7 @@ package com.example.smartbrainnavigation.cicerone.navigator
 
 interface SBNavigatorHolder {
 
-    fun setNavigator(navigator:SBNavigator)
+    fun setNavigator(navigator: SBNavigator, hashCode: Int)
 
-    fun removeNavigator()
+    fun removeNavigator(hashCode: Int)
 }

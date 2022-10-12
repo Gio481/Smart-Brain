@@ -15,12 +15,16 @@
             <option value="$PROJECT_DIR$/SmartBrainDatabase" />
             <option value="$PROJECT_DIR$/SmartBrainFindSimilarPieces" />
             <option value="$PROJECT_DIR$/SmartBrainGuessCharacters" />
+            <option value="$PROJECT_DIR$/SmartBrainGuessCharactersCommon" />
+            <option value="$PROJECT_DIR$/SmartBrainGuessCharactersQuote" />
+            <option value="$PROJECT_DIR$/SmartBrainGuessMovies" />
             <option value="$PROJECT_DIR$/SmartBrainHome" />
             <option value="$PROJECT_DIR$/SmartBrainIntro" />
             <option value="$PROJECT_DIR$/SmartBrainNavigation" />
             <option value="$PROJECT_DIR$/SmartBrainSplash" />
             <option value="$PROJECT_DIR$/SmartBrainTheMaze" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/buildSrc" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

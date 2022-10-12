@@ -8,6 +8,7 @@ class SBFeatureNavigatorStrategy : SBNavigatorStrategy<SBFeatureScreen> {
 
     override fun setUpTransaction(
         screen: SBFeatureScreen,
+        currentFragment: Fragment?,
         fragment: Fragment,
         transaction: FragmentTransaction,
         backStackSize: Int,

@@ -4,7 +4,6 @@ import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import com.example.smartbrainnavigation.cicerone.base.SBBaseScreen
 import com.example.smartbrainnavigation.cicerone.command.*
-import com.example.smartbrainnavigation.cicerone.screen.SBScreen
 
 abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
     private val activity: FragmentActivity,
@@ -14,6 +13,8 @@ abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
 ) : SBNavigator {
 
     private val localStackCopy = mutableListOf<String>()
+
+    private fun getCurrentFragment() = fragmentManager.findFragmentById(containerId)
 
     override fun applyCommands(commands: Array<out SBCiceroneCommand>) {
         fragmentManager.executePendingTransactions()
@@ -48,7 +49,7 @@ abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
 
     protected open fun add(command: Add) {
         commitNewFragmentScreen(
-            command.screen as SBBaseScreen,
+            command.screen,
             command,
             addToBackStack = true,
             shouldReplace = false
@@ -57,7 +58,7 @@ abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
 
     protected open fun replace(command: Replace) {
         commitNewFragmentScreen(
-            command.screen as SBBaseScreen,
+            command.screen,
             command,
             addToBackStack = true,
             shouldReplace = true
@@ -73,7 +74,7 @@ abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
 
     private fun clear() {
         if (localStackCopy.isNotEmpty()) {
-            (0..fragmentManager.backStackEntryCount).forEach { _ ->
+            (1..fragmentManager.backStackEntryCount).forEach { _ ->
                 fragmentManager.popBackStack()
                 localStackCopy.removeAt(localStackCopy.lastIndex)
             }
@@ -110,7 +111,7 @@ abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
         fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
     }
 
-    protected open fun backToUnexisting(screen: SBScreen) {
+    protected open fun backToUnexisting(screen: SBBaseScreen) {
         backToRoot()
     }
 
@@ -126,7 +127,7 @@ abstract class SBAppNavigator<T : SBBaseScreen> @JvmOverloads constructor(
     ) {
         val fragment = screen.getFragment()
         val transaction = fragmentManager.beginTransaction()
-        strategy.setUpTransaction(screen as T, fragment,transaction, localStackCopy.size)
+        strategy.setUpTransaction(screen as T, getCurrentFragment(), fragment, transaction, localStackCopy.size)
         if (shouldReplace) {
             transaction.replace(containerId, fragment, screen.screenKey)
         } else {

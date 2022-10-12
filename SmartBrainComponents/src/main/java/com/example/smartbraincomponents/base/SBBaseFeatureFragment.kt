@@ -74,13 +74,23 @@ abstract class SBBaseFeatureFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>(
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        navigatorHolder?.setNavigator(navigator, hashCode())
+    }
+
+    override fun onDestroy() {
+        navigatorHolder?.removeNavigator(hashCode())
+        super.onDestroy()
+    }
+
     private fun getCurrentFragment(): SBBaseFlowFragment<*>? {
         return (childFragmentManager.findFragmentById(R.id.fragmentBaseContainer)) as? SBBaseFlowFragment<*>
     }
 
     override fun onBackPressed(): Boolean {
         if (getCurrentFragment()?.onBackPressed() == true) return true
-        if (getCurrentFragment()?.showBackButton()==false) return true
+        if (getCurrentFragment()?.showBackButton() == false) return true
         return if (childFragmentManager.backStackEntryCount == 1) {
             parentFragmentManager.popBackStack()
             true
@@ -90,16 +100,6 @@ abstract class SBBaseFeatureFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>(
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        navigatorHolder?.setNavigator(navigator)
-    }
-
-
-    override fun onPause() {
-        navigatorHolder?.removeNavigator()
-        super.onPause()
-    }
 
     private fun getTitle() {
         binding.fragmentTitle.text = getTitleResId()?.let { requireContext().getString(it) } ?: ""

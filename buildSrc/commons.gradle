@@ -1,0 +1,55 @@
+if (name == "app") {
+    id 'com.android.application'
+} else {
+    id 'com.android.library'
+}
+
+id "kotlin-android"
+id "kotlin-android-extensions"
+id "kotlin-kapt"
+id "org.jetbrains.dokka-android"
+apply from: "$project.rootDir/gradle"
+
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.example.smartbrain"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation Koin.koinLib
+
+}
+dokka {
+    moduleName = "$rootProject.name"
+    outputFormat = 'markdown'
+    outputDirectory = "doc/${this.name}"
+    reportUndocumented = false
+    includes = ['README.md']
+}
