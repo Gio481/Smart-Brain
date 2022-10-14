@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/introLogoImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grey"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/introLogoTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/introLogoTextView"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:layout_height="wrap_content"
+        android:text="გამოსცადე შენი ცოდნა კინო სამყაროში"
+        android:textColor="#2C2B2B"
+        app:layout_constraintBottom_toTopOf="@id/firstDefinitionLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/introLogoImageView"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/firstDefinitionLogo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/sb_guess_character_my_smart_brain_view_bkg"
+        app:layout_constraintBottom_toTopOf="@id/secondDefinitionLogo"
+        app:layout_constraintEnd_toStartOf="@+id/firstDefinitionTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/introLogoTextView"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/firstDefinitionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:text="სხვადასხვა ჟანრის ფილმები"
+        android:textColor="#626262"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/firstDefinitionLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/firstDefinitionLogo"
+        app:layout_constraintTop_toTopOf="@id/firstDefinitionLogo" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/secondDefinitionLogo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginVertical="50dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/sb_guess_character_my_smart_brain_view_bkg"
+        app:layout_constraintBottom_toTopOf="@id/thirdDefinitionLogo"
+        app:layout_constraintEnd_toStartOf="@+id/secondDefinitionTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstDefinitionLogo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/secondDefinitionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:text="მაღალი ეტაპები და გართულებული ფილმები"
+        android:textColor="#626262"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/secondDefinitionLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/secondDefinitionLogo"
+        app:layout_constraintTop_toTopOf="@id/secondDefinitionLogo" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thirdDefinitionLogo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="50dp"
+        android:src="@drawable/sb_guess_character_my_smart_brain_view_bkg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/thirdDefinitionTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/secondDefinitionLogo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/thirdDefinitionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:text="გადალახე მინიმუმ 4 ტური და გახსენი ახალი ფიჩერი"
+        android:textColor="#626262"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/thirdDefinitionLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/thirdDefinitionLogo"
+        app:layout_constraintTop_toTopOf="@id/thirdDefinitionLogo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

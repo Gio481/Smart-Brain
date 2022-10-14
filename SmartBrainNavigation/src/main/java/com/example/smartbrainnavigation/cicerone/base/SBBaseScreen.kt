@@ -1,8 +1,8 @@
 package com.example.smartbrainnavigation.cicerone.base
 
 import androidx.fragment.app.Fragment
-import com.example.smartbrainnavigation.cicerone.screen.SBScreen
 
-interface SBBaseScreen : SBScreen {
+interface SBBaseScreen {
+    val screenKey: String get() = this::class.java.name
     fun getFragment(): Fragment
 }

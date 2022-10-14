@@ -8,6 +8,7 @@ import com.example.smartbrainnavigation.cicerone.navigator.SBNavigatorStrategy
 class SBFlowNavigatorStrategy : SBNavigatorStrategy<SBFlowScreen> {
     override fun setUpTransaction(
         screen: SBFlowScreen,
+        currentFragment: Fragment?,
         fragment: Fragment,
         transaction: FragmentTransaction,
         backStackSize: Int,

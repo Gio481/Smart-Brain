@@ -2,9 +2,9 @@ package com.example.smartbrainnavigation.cicerone.feature
 
 import com.example.smartbrainnavigation.cicerone.SBAnimation
 import com.example.smartbrainnavigation.cicerone.SBNavigationType
-import com.example.smartbrainnavigation.cicerone.base.SBRouter
+import com.example.smartbrainnavigation.cicerone.base.SBBaseRouter
 
-class SBFeatureRouter : SBRouter() {
+class SBFeatureRouter : SBBaseRouter() {
 
     fun navigateTo(
         screen: SBFeatureScreen,

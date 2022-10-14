@@ -1,10 +1,10 @@
 package com.example.smartbrainnavigation.cicerone.flow
 
 import com.example.smartbrainnavigation.cicerone.SBNavigationType
-import com.example.smartbrainnavigation.cicerone.base.SBRouter
+import com.example.smartbrainnavigation.cicerone.base.SBBaseRouter
 import com.example.smartbrainnavigation.cicerone.feature.SBFeatureRouter
 
-class SBFlowRouter(private val featureRouter: SBFeatureRouter) : SBRouter() {
+class SBFlowRouter(private val featureRouter: SBFeatureRouter) : SBBaseRouter() {
 
     fun navigateTo(
         screen: SBFlowScreen,

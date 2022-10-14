@@ -65,11 +65,11 @@ class SBMainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        navigatorHolder.setNavigator(navigator)
+        navigatorHolder.setNavigator(navigator, hashCode())
     }
 
     override fun onPause() {
-        navigatorHolder.removeNavigator()
+        navigatorHolder.removeNavigator(hashCode())
         super.onPause()
     }
 }

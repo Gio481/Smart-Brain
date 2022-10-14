@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="@android:color/transparent">
 
     <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginHorizontal="10dp"
-        app:cardCornerRadius="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        app:cardCornerRadius="15dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,12 +29,12 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/backButton"
                 android:layout_width="30dp"
-                app:layout_constraintStart_toStartOf="parent"
                 android:layout_height="30dp"
                 android:rotation="180"
-                android:visibility="gone"
                 android:src="@drawable/ic_arrow"
+                android:visibility="gone"
                 app:layout_constraintEnd_toStartOf="@id/fragmentTitle"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/closeButton" />
 
 
@@ -42,12 +42,12 @@
                 android:id="@+id/fragmentTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:layout_marginTop="2dp"
-                android:textColor="#636262"
                 android:layout_marginStart="40dp"
-                android:textStyle="bold"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="15dp"
+                android:textColor="#636262"
                 android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/closeButton"
                 app:layout_constraintEnd_toStartOf="@id/closeButton"
                 app:layout_constraintStart_toStartOf="parent"
@@ -81,9 +81,9 @@
 
             <FrameLayout
                 android:id="@+id/fragmentActionView"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"/>
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

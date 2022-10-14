@@ -8,6 +8,6 @@ class SBHomeNavigatorImpl(private val router: SBFeatureRouter) : SBHomeNavigator
 
     override fun navigateToHome() {
         SBHomeFeatureComponentImpl().featureInject()
-        router.navigateTo(screen = SBHomeFeatureScreen.Main, navigationType = SBNavigationType.REPLACE)
+        router.navigateTo(screen = SBHomeFeatureScreen.Main, navigationType = SBNavigationType.REPLACE_AND_CLEAR)
     }
 }

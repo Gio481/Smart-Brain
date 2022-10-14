@@ -22,14 +22,14 @@ class SBHomeCustomScrollView @JvmOverloads constructor(
 
     init {
         mySmartBrainViews.getViews().forEach {
-            addMySmartBrainView(it)
+            addMySmartBrainContainers(it)
             val lp = it.layoutParams as MarginLayoutParams
             lp.bottomMargin = MARGIN_BOTTOM
             it.layoutParams = lp
         }
     }
 
-    private fun addMySmartBrainView(view: SBMySmartBrainBaseView) {
+    private fun addMySmartBrainContainers(view: SBMySmartBrainBaseView) {
         binding.mySmartBrainViewContainer.addView(view)
     }
 
