@@ -29,6 +29,7 @@
         android:layout_height="0dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/levelTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="5dp"
@@ -44,7 +45,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:text="Guess Movies"
+        android:text="@string/guess_movies"
         android:textColor="@color/grey"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/levelCircles"

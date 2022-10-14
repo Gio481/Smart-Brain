@@ -74,6 +74,10 @@ abstract class SBBaseFeatureFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>(
         }
     }
 
+    fun nonAnimation(){
+        this.exitTransition = null
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         navigatorHolder?.setNavigator(navigator, hashCode())

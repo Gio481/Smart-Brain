@@ -16,6 +16,10 @@ class SBStartGuessMoviesListFragment : SBGuessCharacterListBaseFragment<SBStartG
 
     private val binding by viewBinding(SbStartGuessMoviesListFragmentBinding::bind)
 
+    override fun defaultAction() {
+        vm?.next()
+    }
+
     override fun initializeInjector() {
         SBStartGuessMoviesFeatureComponentImpl().moviesListModule().inject(this)
     }

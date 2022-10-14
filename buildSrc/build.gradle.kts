@@ -9,9 +9,9 @@ repositories {
 
 gradlePlugin {
     plugins {
-        create("GradleConfigPlugin") {
-            id = "GradleConfigPlugin"
-            implementationClass = "GradleConfigPlugin"
+        create("GradlePluginConfig") {
+            id = "GradlePluginConfig"
+            implementationClass = "GradlePluginConfig"
         }
     }
 }

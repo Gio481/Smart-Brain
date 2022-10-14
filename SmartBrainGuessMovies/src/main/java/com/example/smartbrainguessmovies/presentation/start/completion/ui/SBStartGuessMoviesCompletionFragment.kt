@@ -2,6 +2,7 @@ package com.example.smartbrainguessmovies.presentation.start.completion.ui
 
 import com.example.smartbraincomponents.base.SBBaseFlowFragment
 import com.example.smartbrainguessmovies.R
+import com.example.smartbrainguessmovies.feature.start.di.SBStartGuessMoviesFeatureComponentImpl
 import com.example.smartbrainguessmovies.presentation.start.completion.vm.SBStartGuessMoviesCompletionVm
 
 class SBStartGuessMoviesCompletionFragment : SBBaseFlowFragment<SBStartGuessMoviesCompletionVm>() {
@@ -12,9 +13,13 @@ class SBStartGuessMoviesCompletionFragment : SBBaseFlowFragment<SBStartGuessMovi
 
     override fun defaultActionViewText() = R.string.completion_default_view_text
 
-    override fun defaultAction() {
-        super.defaultAction()
+    override fun initializeInjector() {
+        SBStartGuessMoviesFeatureComponentImpl().completionModule().inject(this)
+    }
 
+    override fun defaultAction() {
+        nonAnimation()
+        vm?.navigateToDetails()
     }
 
 }

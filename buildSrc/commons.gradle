@@ -1,27 +1,21 @@
 if (name == "app") {
-    id 'com.android.application'
+    apply plugin: 'com.android.application'
 } else {
-    id 'com.android.library'
+    apply plugin: 'com.android.library'
 }
 
-id "kotlin-android"
-id "kotlin-android-extensions"
-id "kotlin-kapt"
-id "org.jetbrains.dokka-android"
-apply from: "$project.rootDir/gradle"
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "kotlin-kapt"
 
 
 android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.smartbrain"
         minSdk 21
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -38,18 +32,15 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
+        dataBinding false
         viewBinding true
     }
 }
 
 dependencies {
-    implementation Koin.koinLib
-
-}
-dokka {
-    moduleName = "$rootProject.name"
-    outputFormat = 'markdown'
-    outputDirectory = "doc/${this.name}"
-    reportUndocumented = false
-    includes = ['README.md']
+    implementation SupportLibraries.Ktx
+    implementation SupportLibraries.AppCompat
+    implementation SupportLibraries.Material
+    implementation SupportLibraries.Constraint
+    implementation Libraries.Koin
 }

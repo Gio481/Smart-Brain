@@ -11,7 +11,7 @@ class SBStartGuessMoviesCompletionModule(override val featureQualifier: StringQu
 
     override fun onScreenModule() = module {
         viewModel {
-            SBStartGuessMoviesCompletionVm(service = get())
+            SBStartGuessMoviesCompletionVm(service = get(featureQualifier), navigator = get(), get(featureQualifier))
         }
     }
 }

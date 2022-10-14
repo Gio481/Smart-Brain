@@ -10,14 +10,14 @@ import com.example.smartbrainguesscharacterscommon.databinding.SbGuessCharacterL
 import com.example.smartbrainguesscharacterscommon.presentation.details.adapter.SBGuessCharacterDetailsAdapter
 import kotlin.reflect.KClass
 
-class SBGuessCharactersBaseDetailsFragment<VM:SBBaseViewModel> : SBBaseFlowFragment<VM>() {
+abstract class SBGuessCharactersBaseDetailsFragment<VM:SBBaseViewModel> : SBBaseFlowFragment<VM>() {
 
     override fun showBackButton(): Boolean = false
 
     private lateinit var levelAdapter: SBGuessCharacterDetailsAdapter
     override val screenLayout: Int = R.layout.sb_guess_character_details_fragment
 
-    private val binding by viewBinding(SbGuessCharacterDetailsFragmentBinding::bind)
+    protected val binding by viewBinding(SbGuessCharacterDetailsFragmentBinding::bind)
 
     override fun showActionView(): Boolean = false
 

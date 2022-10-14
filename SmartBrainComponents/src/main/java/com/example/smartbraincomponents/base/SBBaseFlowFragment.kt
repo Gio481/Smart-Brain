@@ -14,6 +14,9 @@ abstract class SBBaseFlowFragment<VM : SBBaseViewModel> : SBBaseFragment<VM>() {
     open fun defaultActionViewArrowVisibility() = true
     open fun defaultAction() {}
     open fun handleBackPress() {}
+    fun nonAnimation(){
+        (parentFragment as SBBaseFeatureFragment<*>).nonAnimation()
+    }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

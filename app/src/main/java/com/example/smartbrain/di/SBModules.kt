@@ -3,7 +3,11 @@ package com.example.smartbrain.di
 import com.example.smartbrain.view_provider.SBMySmartBrainViewProviderImpl
 import com.example.smartbrainauthentication.navigation.SBAuthenticationNavigator
 import com.example.smartbrainauthentication.navigation.SBAuthenticationNavigatorImpl
+import com.example.smartbraincomponents.coroutine.SBDispatcherProvider
+import com.example.smartbraincomponents.coroutine.SBDispatcherProviderImpl
 import com.example.smartbraincomponents.view_provider.SBMySmartBrainViewProvider
+import com.example.smartbraindatabase.db.provideGuessMoviesDao
+import com.example.smartbraindatabase.db.provideSBDatabase
 import com.example.smartbrainguessmovies.navigation.SBGuessMoviesNavigator
 import com.example.smartbrainguessmovies.navigation.SBGuessMoviesNavigatorImpl
 import com.example.smartbrainhome.navigation.SBHomeNavigator
@@ -45,4 +49,13 @@ val sbNavigatorModule = module {
 
 val viewProvidesModule = module {
     singleOf(::SBMySmartBrainViewProviderImpl) { bind<SBMySmartBrainViewProvider>() }
+}
+
+val databaseModule = module {
+    single { provideSBDatabase(context = get()) }
+    single { provideGuessMoviesDao(db = get()) }
+}
+
+val dispatcherProviderModule = module {
+    single<SBDispatcherProvider> { SBDispatcherProviderImpl() }
 }
