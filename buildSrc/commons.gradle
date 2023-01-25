@@ -8,6 +8,9 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "kotlin-kapt"
+apply plugin: 'com.google.gms.google-services'
+
+
 
 
 android {
@@ -39,8 +42,5 @@ android {
 
 dependencies {
     implementation SupportLibraries.Ktx
-    implementation SupportLibraries.AppCompat
-    implementation SupportLibraries.Material
-    implementation SupportLibraries.Constraint
     implementation Libraries.Koin
 }

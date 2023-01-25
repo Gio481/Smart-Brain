@@ -6,9 +6,9 @@ import com.example.smartbrainnavigation.cicerone.flow.SBFlowRouter
 import com.example.smartbrainnavigation.cicerone.flow.SBFlowScreen
 import com.example.smartbrainnavigation.cicerone.service.SBFlowRouterService
 
-open class SBBaseViewModel(service: SBFlowRouterService) : ViewModel() {
+open class SBBaseViewModel(service: SBFlowRouterService? = null) : ViewModel() {
 
-    val router: SBFlowRouter? = service.router
+    val router: SBFlowRouter? = service?.router
 
     protected fun changeScreen(
         screen: SBFlowScreen,

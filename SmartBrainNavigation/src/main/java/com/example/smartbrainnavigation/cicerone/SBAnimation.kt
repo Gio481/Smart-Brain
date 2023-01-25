@@ -19,6 +19,6 @@ sealed class SBAnimation(val transition: Transition?, private val duration: Long
         fun rightToLeft(duration: Long = DEFAULT_ANIMATION_DURATION) = Slide(Gravity.RIGHT, duration)
         fun fadeIn(duration: Long = DEFAULT_ANIMATION_DURATION) = Fade(Visibility.MODE_IN, duration)
         fun fadeOut(duration: Long = DEFAULT_ANIMATION_DURATION) = Fade(Visibility.MODE_OUT, duration)
-        private const val DEFAULT_ANIMATION_DURATION = 300L
+        private const val DEFAULT_ANIMATION_DURATION = 200L
     }
 }

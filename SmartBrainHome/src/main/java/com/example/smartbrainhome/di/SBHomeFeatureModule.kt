@@ -11,7 +11,7 @@ class SBHomeFeatureModule(override val featureQualifier: StringQualifier) : SBPe
 
     override fun onFeatureModule() = module {
         viewModel {
-            SBHomeFeatureViewModel(service = get())
+            SBHomeFeatureViewModel()
         }
     }
 }

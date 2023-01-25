@@ -15,7 +15,6 @@ class SBGuessCharacterMySmartBrainChildView(
 
     private val binding = MySmartBrainChildViewBinding.inflate(LayoutInflater.from(context), this, true)
 
-
     init {
         childViewList.forEach {
             binding.childViewContainer.addView(it)

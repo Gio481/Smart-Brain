@@ -17,15 +17,28 @@
         android:id="@+id/viewPagerCutomCircleIndicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:activeCircleBackground="@drawable/active_circle_indicator"
-        app:inactiveCircleBackground="@drawable/inactive_circle_indicator"
-        app:circleIndicatorSize="12dp"
-        app:circleIndicatorMargin="5dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="100dp"
         android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:activeCircleBackground="@drawable/active_circle_indicator"
+        app:circleIndicatorMargin="5dp"
+        app:circleIndicatorSize="12dp"
+        app:inactiveCircleBackground="@drawable/inactive_circle_indicator"
         app:layout_constraintBottom_toTopOf="@id/signInButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/playAsGuest"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="50dp"
+        android:background="@drawable/sign_in_button_background"
+        android:gravity="center"
+        android:text="play as guest"
+        android:textAllCaps="false"
+        android:layout_marginBottom="20dp"
+        android:textColor="#471576"
+        app:layout_constraintBottom_toTopOf="@id/signInButton" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signInButton"

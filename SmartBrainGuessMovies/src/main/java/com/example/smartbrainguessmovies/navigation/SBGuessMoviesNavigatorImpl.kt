@@ -4,17 +4,18 @@ import com.example.smartbrainguessmovies.feature.details.di.SBGuessMoviesDetails
 import com.example.smartbrainguessmovies.feature.start.di.SBStartGuessMoviesFeatureComponentImpl
 import com.example.smartbrainnavigation.cicerone.SBNavigationType
 import com.example.smartbrainnavigation.cicerone.feature.SBFeatureRouter
+import com.example.smartbrainnavigation.cicerone.navigator.SBAppNavigators
 
-class SBGuessMoviesNavigatorImpl(private val featureRouter: SBFeatureRouter) : SBGuessMoviesNavigator {
+class SBGuessMoviesNavigatorImpl(private val router: SBFeatureRouter) : SBAppNavigators.GuessCharacters {
 
     override fun navigateToStartGame(navigationType: SBNavigationType) {
         SBStartGuessMoviesFeatureComponentImpl().featureInject()
-        featureRouter.navigateTo(SBGuessMoviesFeatureScreens.Start, navigationType = navigationType)
+        router.navigateTo(SBGuessMoviesFeatureScreens.Start, navigationType = navigationType)
     }
 
     override fun navigateToDetails(navigationType: SBNavigationType) {
         SBGuessMoviesDetailsFeatureComponentImpl().featureInject()
-        featureRouter.navigateTo(SBGuessMoviesFeatureScreens.Details, navigationType = navigationType)
+        router.navigateTo(SBGuessMoviesFeatureScreens.Details, navigationType = navigationType)
     }
 
     override fun navigateToPlayGame(navigationType: SBNavigationType) {

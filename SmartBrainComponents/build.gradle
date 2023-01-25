@@ -3,13 +3,11 @@ apply plugin: 'GradlePluginConfig'
 
 dependencies {
 
-    implementation SupportLibraries.Ktx
-    implementation SupportLibraries.AppCompat
-    implementation SupportLibraries.Material
-    implementation SupportLibraries.Constraint
-    testImplementation TestLibraries.Junit
-    androidTestImplementation TestLibraries.TestRunner
-    androidTestImplementation TestLibraries.Espresso
+    api SupportLibraries.Ktx
+    api SupportLibraries.AppCompat
+    api SupportLibraries.Material
+    api SupportLibraries.Constraint
+    api SupportLibraries.Legacy
     api Coroutines.Core
     api Coroutines.Android
     api Lifecycle.ViewModel

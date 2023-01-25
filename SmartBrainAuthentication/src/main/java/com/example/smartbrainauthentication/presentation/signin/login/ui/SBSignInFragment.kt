@@ -1,5 +1,10 @@
 package com.example.smartbrainauthentication.presentation.signin.login.ui
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.view.MotionEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import com.example.smartbrainauthentication.R
 import com.example.smartbrainauthentication.databinding.SbAuthenticationSigninFragmentBinding
 import com.example.smartbrainauthentication.feature.signin.di.SBSignInFeatureComponentImpl
@@ -29,6 +34,7 @@ class SBSignInFragment : SBBaseFlowFragment<SBSignInViewModel>() {
     }
 
     override fun onBindViewModel(vm: SBSignInViewModel) {
-    }
+        super.onBindViewModel(vm)
 
+    }
 }
