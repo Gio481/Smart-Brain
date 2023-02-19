@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MazeView">
+        <attr name="rightStickAmount" format="enum">
+            <enum name="one" value="0" />
+            <enum name="two" value="1" />
+            <enum name="three" value="2" />
+        </attr>
+
+        <attr name="leftStickAmount" format="enum">
+            <enum name="one" value="0" />
+            <enum name="two" value="1" />
+            <enum name="three" value="2" />
+        </attr>
+
+        <attr name="topRightStickWidth" format="dimension" />
+        <attr name="centerRightStickWidth" format="dimension" />
+        <attr name="bottomRightStickWidth" format="dimension" />
+
+        <attr name="topRightStickMargin" format="dimension" />
+        <attr name="bottomRightStickMargin" format="dimension" />
+        <attr name="centerRightStickMarginTop" format="dimension" />
+        <attr name="centerRightStickMarginBottom" format="dimension" />
+
+
+        <attr name="topLeftStickMargin" format="dimension" />
+        <attr name="bottomLeftStickMargin" format="dimension" />
+        <attr name="centerLeftStickMarginTop" format="dimension" />
+        <attr name="centerLeftStickMarginBottom" format="dimension" />
+
+
+        <attr name="topLeftStickWidth" format="dimension" />
+        <attr name="centerLeftStickWidth" format="dimension" />
+        <attr name="bottomLeftStickWidth" format="dimension" />
+
+
+    </declare-styleable>
+</resources>

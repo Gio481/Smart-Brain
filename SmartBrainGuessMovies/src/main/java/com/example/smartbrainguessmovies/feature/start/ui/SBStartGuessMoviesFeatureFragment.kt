@@ -12,7 +12,6 @@ class SBStartGuessMoviesFeatureFragment : SBBaseFeatureFragment<SBStartGuessMovi
 
     override fun getTitleResId(): Int = R.string.guess_movies
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         vm?.setStartFragment()

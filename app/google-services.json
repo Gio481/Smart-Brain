@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "704494935242",
+    "project_id": "smartbrain-eee42",
+    "storage_bucket": "smartbrain-eee42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704494935242:android:e404f685d6b978fb1ca833",
+        "android_client_info": {
+          "package_name": "com.example.smartbrain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704494935242-rslcp61r9pu0idbi0alb4hek887l55ov.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkVNeDezmc7NM84Xad7JbAkyVn9U2YEZM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704494935242-rslcp61r9pu0idbi0alb4hek887l55ov.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,12 +1,15 @@
 package com.example.smartbraincomponents.components.auth
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.text.InputType
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
+import androidx.annotation.DrawableRes
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.example.smartbraincomponents.R
 import com.example.smartbraincomponents.databinding.SbCustomAuthFieldBinding
@@ -45,6 +48,11 @@ class SBCustomAuthField @JvmOverloads constructor(
     private var passwordIndicatorMargin: Int = -1
 
     private var editTextType: EditTextType? = null
+        set(value) {
+            value?.let {  getAuthFieldType(it)}
+            field = value
+        }
+
     private val passwordDuringSet = mutableListOf<String>()
 
     init {
@@ -56,18 +64,13 @@ class SBCustomAuthField @JvmOverloads constructor(
 
         hint = typeArray.getString(R.styleable.SBCustomAuthField_hint)
         icon = typeArray.getResourceId(R.styleable.SBCustomAuthField_icon, -1)
-        passwordIndicatorBackground =
-            typeArray.getResourceId(R.styleable.SBCustomAuthField_passwordIndicatorBackground, -1)
-        passwordIndicatorSize =
-            typeArray.getDimensionPixelSize(R.styleable.SBCustomAuthField_passwordIndicatorSize, 1)
-        passwordIndicatorMargin =
-            typeArray.getDimensionPixelSize(R.styleable.SBCustomAuthField_passwordIndicatorMargin,
-                1)
-        editTextType =
-            EditTextType.values()[typeArray.getInt(R.styleable.SBCustomAuthField_fieldType, 2)]
+        passwordIndicatorBackground = typeArray.getResourceId(R.styleable.SBCustomAuthField_passwordIndicatorBackground, -1)
+        passwordIndicatorSize = typeArray.getDimensionPixelSize(R.styleable.SBCustomAuthField_passwordIndicatorSize, 1)
+        passwordIndicatorMargin = typeArray.getDimensionPixelSize(R.styleable.SBCustomAuthField_passwordIndicatorMargin, 1)
+        editTextType = EditTextType.values()[typeArray.getInt(R.styleable.SBCustomAuthField_fieldType, 2)]
         toggleButtonVisibility = typeArray.getBoolean(R.styleable.SBCustomAuthField_setToggleButton, false)
         typeArray.recycle()
-        getAuthFieldType()
+        s()
         setToggleButtonListener()
     }
 
@@ -92,7 +95,7 @@ class SBCustomAuthField @JvmOverloads constructor(
         }
     }
 
-    private fun getAuthFieldType() {
+    private fun getAuthFieldType(editTextType: EditTextType) {
         with(binding.authEditText) {
             when (editTextType) {
                 EditTextType.Text -> {
@@ -104,7 +107,6 @@ class SBCustomAuthField @JvmOverloads constructor(
                     getTextColor(R.color.grey)
                 }
                 EditTextType.Password -> setUpPasswords()
-                else -> inputType = InputType.TYPE_CLASS_NUMBER
             }
         }
     }
@@ -120,11 +122,30 @@ class SBCustomAuthField @JvmOverloads constructor(
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
+    private fun s(){
+        binding.authEditText.setOnTouchListener { _, _ ->
+            return@setOnTouchListener binding.authEditText.hasFocus()
+
+        }
+        binding.authEditText.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                binding.authEditText.text?.let {
+                    binding.authEditText.setSelection(
+                        it.length
+                    )
+                }
+            }
+        }
+    }
+
     private fun setToggleButtonListener() {
         with(binding) {
             toggleButtonImageView.setOnClickListener {
                 isPasswordHidden = !isPasswordHidden
-                toggleButtonImageView.setBackgroundResource(if (isPasswordHidden) R.drawable.ic_not_visible else R.drawable.ic_visible)
+                @DrawableRes
+                val icon = if (isPasswordHidden) R.drawable.ic_not_visible else R.drawable.ic_visible
+                toggleButtonImageView.background = ContextCompat.getDrawable(context, icon)
                 customCirclePasswordsLayout.isVisible = isPasswordHidden
                 authEditText.getTextColor(if (isPasswordHidden) R.color.transparent else R.color.grey)
                 authEditText.isCursorVisible = !isPasswordHidden
@@ -135,9 +156,7 @@ class SBCustomAuthField @JvmOverloads constructor(
     private fun addPasswordView() {
         val passwordView = View(context)
         passwordView.setBackgroundResource(passwordIndicatorBackground)
-        binding.customCirclePasswordsLayout.addView(passwordView,
-            passwordIndicatorSize,
-            passwordIndicatorSize)
+        binding.customCirclePasswordsLayout.addView(passwordView, passwordIndicatorSize, passwordIndicatorSize)
         val lp = passwordView.layoutParams as LinearLayout.LayoutParams
         lp.marginStart = passwordIndicatorMargin
         passwordView.layoutParams = lp

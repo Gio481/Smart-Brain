@@ -24,14 +24,17 @@ dependencies {
     implementation SupportLibraries.AppCompat
     implementation SupportLibraries.Material
     implementation SupportLibraries.Constraint
+    implementation SupportLibraries.Legacy
     testImplementation TestLibraries.Junit
     androidTestImplementation TestLibraries.TestRunner
     androidTestImplementation TestLibraries.Espresso
-    api Coroutines.Core
-    api Coroutines.Android
-    api Lifecycle.ViewModel
-    api Lifecycle.Extension
-    api Lifecycle.LiveData
+    implementation Coroutines.Core
+    implementation Coroutines.Android
+    implementation Lifecycle.ViewModel
+    implementation Lifecycle.Extension
+    implementation Lifecycle.LiveData
+    implementation platform(FirebaseLibraries.Firebase)
+    implementation FirebaseLibraries.Firestore
 
     implementation project(':SmartBrainAuthentication')
     implementation project(':SmartBrainComponents')

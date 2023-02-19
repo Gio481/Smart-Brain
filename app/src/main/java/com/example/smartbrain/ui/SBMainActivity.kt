@@ -10,9 +10,9 @@ import com.example.smartbrainnavigation.cicerone.constants.CICERONE_FEATURE
 import com.example.smartbrainnavigation.cicerone.feature.SBFeatureRouter
 import com.example.smartbrainnavigation.cicerone.feature.SBFeatureScreen
 import com.example.smartbrainnavigation.cicerone.navigator.SBAppNavigator
+import com.example.smartbrainnavigation.cicerone.navigator.SBAppNavigators
 import com.example.smartbrainnavigation.cicerone.navigator.SBNavigator
 import com.example.smartbrainnavigation.cicerone.navigator.SBNavigatorHolder
-import com.example.smartbrainsplash.navigation.SBSplashNavigator
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 import org.koin.core.qualifier.StringQualifier
@@ -23,7 +23,7 @@ class SBMainActivity : AppCompatActivity() {
     private val navigatorHolder by inject<SBNavigatorHolder>(StringQualifier("Feature"))
     private val featureRouter by inject<SBFeatureRouter>()
 
-    private val splashNavigator = get<SBSplashNavigator>()
+    private val splashNavigator = get<SBAppNavigators.Splash>()
 
     private val navigator: SBNavigator by lazy {
         object : SBAppNavigator<SBFeatureScreen>(

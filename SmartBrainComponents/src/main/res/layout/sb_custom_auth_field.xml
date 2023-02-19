@@ -53,13 +53,13 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/toggleButtonImageView"
-        android:src="@drawable/ic_not_visible"
-        android:layout_width="30dp"
+        android:background="@drawable/ic_visible"
+        android:layout_width="wrap_content"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@id/authFieldName"
         app:layout_constraintBottom_toBottomOf="@id/authEditText"
         app:layout_constraintTop_toTopOf="@id/authEditText"
-        android:layout_height="25dp"/>
+        android:layout_height="wrap_content"/>
 
     <View
         android:layout_width="0dp"

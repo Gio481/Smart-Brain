@@ -8,15 +8,15 @@ class SBFeatureRouter : SBBaseRouter() {
 
     fun navigateTo(
         screen: SBFeatureScreen,
-        navigationType: SBNavigationType = SBNavigationType.REPLACE,
-        animation: SBAnimation = SBAnimation.bottomToTop(400),
+        navigationType: SBNavigationType = SBNavigationType.ADD,
+        animation: SBAnimation = SBAnimation.bottomToTop(),
     ) {
         navigate(screen, navigationType, animation)
     }
 
     private fun navigate(
         screen: SBFeatureScreen,
-        navigationType: SBNavigationType = SBNavigationType.REPLACE,
+        navigationType: SBNavigationType = SBNavigationType.ADD,
         animation: SBAnimation,
     ) {
         screen.setAnimation(animation)

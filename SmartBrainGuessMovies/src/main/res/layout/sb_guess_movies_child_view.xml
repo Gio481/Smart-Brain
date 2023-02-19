@@ -1,55 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/guessMoviesStatesContainer"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/levelCircles"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/sb_guess_character_my_smart_brain_view_bkg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/guessMoviesEmptyImageView"
-        android:layout_width="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/guess_movies_starting_logo"
-        app:layout_constraintEnd_toEndOf="@id/levelCircles"
-        app:layout_constraintStart_toStartOf="@id/levelCircles"
-        app:layout_constraintBottom_toBottomOf="@id/levelCircles"
-        app:layout_constraintTop_toTopOf="@+id/levelCircles"
-        android:layout_height="0dp"/>
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/levelTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="5dp"
-        android:gravity="center"
-        android:textColor="@color/grey"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@id/levelCircles"
-        app:layout_constraintEnd_toEndOf="@id/levelCircles"
-        app:layout_constraintStart_toStartOf="@id/levelCircles"
-        app:layout_constraintTop_toTopOf="@id/levelCircles" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:text="@string/guess_movies"
-        android:textColor="@color/grey"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/levelCircles"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/levelCircles"
-        app:layout_constraintTop_toTopOf="@id/levelCircles" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    android:layout_height="match_parent"/>

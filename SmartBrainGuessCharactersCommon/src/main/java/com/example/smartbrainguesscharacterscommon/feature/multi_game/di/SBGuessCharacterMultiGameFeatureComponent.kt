@@ -1,0 +1,5 @@
+package com.example.smartbrainguesscharacterscommon.feature.multi_game.di
+
+import com.example.smartbraincomponents.koin.SBBaseFeatureComponent
+
+interface SBGuessCharacterMultiGameFeatureComponent : SBBaseFeatureComponent

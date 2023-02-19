@@ -4,5 +4,4 @@ apply plugin: 'GradlePluginConfig'
 dependencies {
     implementation project(':SmartBrainComponents')
     implementation project(':SmartBrainNavigation')
-    implementation project(':SmartBrainHome')
 }

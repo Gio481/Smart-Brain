@@ -45,7 +45,7 @@
 
 
     <View
-        android:rotation="15"
+        android:rotation="8"
         android:background="@color/grey"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,7 +53,7 @@
         android:layout_height="1.5dp"/>
 
     <View
-        android:rotation="-15"
+        android:rotation="-8"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"

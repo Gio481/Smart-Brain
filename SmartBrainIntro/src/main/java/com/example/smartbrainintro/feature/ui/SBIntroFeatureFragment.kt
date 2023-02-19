@@ -38,6 +38,10 @@ class SBIntroFeatureFragment : SBBaseFragment<SBIntroFeatureViewModel>() {
         binding.signUpButton.setOnClickListener {
             vm.navigateToSignUp()
         }
+
+        binding.playAsGuest.setOnClickListener {
+
+        }
     }
 
 

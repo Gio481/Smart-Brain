@@ -40,6 +40,13 @@ object SupportLibraries {
     const val AppCompat = "androidx.appcompat:appcompat:1.5.0"
     const val Material = "com.google.android.material:material:1.6.1"
     const val Constraint = "androidx.constraintlayout:constraintlayout:2.1.4"
+    const val Legacy = "androidx.legacy:legacy-support-v4:1.0.0"
+}
+
+object FirebaseLibraries {
+    const val Firebase = "com.google.firebase:firebase-bom:29.3.1"
+    const val Firestore = "com.google.firebase:firebase-firestore-ktx"
+
 }
 
 object TestLibraries {

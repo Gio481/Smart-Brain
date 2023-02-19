@@ -5,20 +5,23 @@ import com.example.smartbrainauthentication.feature.signin.di.SBSignInFeatureCom
 import com.example.smartbrainauthentication.feature.signup.di.SBSignUpFeatureComponentImpl
 import com.example.smartbrainnavigation.cicerone.SBNavigationType
 import com.example.smartbrainnavigation.cicerone.feature.SBFeatureRouter
+import com.example.smartbrainnavigation.cicerone.navigator.SBAppNavigators
 
-class SBAuthenticationNavigatorImpl(private val featureRouter: SBFeatureRouter) : SBAuthenticationNavigator {
+class SBAuthenticationNavigatorImpl(private val router: SBFeatureRouter) : SBAppNavigators.Authentication {
 
-    override fun navigateToSignIn(
-        navigationType: SBNavigationType,
-    ) {
+    override fun navigateToSignIn(navigationType: SBNavigationType) {
         SBSignInFeatureComponentImpl().featureInject()
-        featureRouter.navigateTo(screen = SBAuthenticationScreens.SignIn, navigationType = navigationType)
+        router.navigateTo(
+            screen = SBAuthenticationScreens.SignIn,
+            navigationType = navigationType
+        )
     }
 
-    override fun navigateToSignUp(
-        navigationType: SBNavigationType,
-    ) {
+    override fun navigateToSignUp(navigationType: SBNavigationType) {
         SBSignUpFeatureComponentImpl().featureInject()
-        featureRouter.navigateTo(screen = SBAuthenticationScreens.SignUp, navigationType = navigationType)
+        router.navigateTo(
+            screen = SBAuthenticationScreens.SignUp,
+            navigationType = navigationType
+        )
     }
 }
