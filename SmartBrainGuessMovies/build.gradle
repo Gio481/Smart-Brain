@@ -1,0 +1,9 @@
+apply plugin: 'GradlePluginConfig'
+apply plugin: 'com.google.gms.google-services'
+
+dependencies {
+    implementation project(':SmartBrainComponents')
+    implementation project(':SmartBrainNavigation')
+    implementation project(':SmartBrainGuessCharactersCommon')
+    implementation project(':SmartBrainDatabase')
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guess_character_container">გამოიცანი ფილმის გმირი</string>
+    <string name="start_game">თამაშის დაწყება</string>
+
+</resources>

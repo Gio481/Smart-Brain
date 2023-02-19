@@ -1,0 +1,8 @@
+apply plugin: 'GradlePluginConfig'
+
+dependencies {
+    implementation Room.Ktx
+    implementation Room.RunTime
+    kapt Room.Compiler
+    implementation project(':SmartBrainComponents')
+}

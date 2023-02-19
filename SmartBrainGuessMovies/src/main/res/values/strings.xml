@@ -1,0 +1,5 @@
+<resources>
+    <string name="guess_movies">გამოიცანი კინოები</string>
+    <string name="completion_default_view_text">თამაშის დაწყება</string>
+    <string name="guess_movies_details">დეტალები</string>
+</resources>

@@ -1,0 +1,46 @@
+if (name == "app") {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+apply plugin: "kotlin-android"
+apply plugin: "kotlin-android-extensions"
+apply plugin: "org.jetbrains.kotlin.android"
+apply plugin: "kotlin-kapt"
+apply plugin: 'com.google.gms.google-services'
+
+
+
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+    }
+
+    buildTypes {
+        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding false
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation SupportLibraries.Ktx
+    implementation Libraries.Koin
+}

@@ -1,0 +1,19 @@
+apply plugin: 'GradlePluginConfig'
+
+
+dependencies {
+
+    api SupportLibraries.Ktx
+    api SupportLibraries.AppCompat
+    api SupportLibraries.Material
+    api SupportLibraries.Constraint
+    api SupportLibraries.Legacy
+    api Coroutines.Core
+    api Coroutines.Android
+    api Lifecycle.ViewModel
+    api Lifecycle.Extension
+    api Lifecycle.LiveData
+    api Libraries.Datastore
+
+    implementation project(":SmartBrainNavigation")
+}

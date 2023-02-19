@@ -1,0 +1,6 @@
+apply plugin: 'GradlePluginConfig'
+
+dependencies {
+    implementation project(':SmartBrainNavigation')
+    implementation project(':SmartBrainComponents')
+}
